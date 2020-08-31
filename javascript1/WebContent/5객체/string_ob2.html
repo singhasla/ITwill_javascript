@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//주제 : 웹페이지 방문자에게 이름을 영문으로 입력받은 후
+	//		 방문자가 영문이름을 소문자로 작성했을 경우, 대문자로 바꿔서 출력
+	//		 또한 방문자에게 연락처를 입력받은 후
+	//		 정보 노출되지 않게, 전화번호 뒤의 4자리를 *로 치환
+	
+	var userName = prompt("당신의 영문 이름을 입력하세요","");
+	
+	// 영문자 -> 대문자로...
+	var upperName = userName.toUpperCase();
+	document.write(upperName, "<br>");
+	
+	var userPhone = prompt("당신의 연락처를 입력하세요", "");	//01077773333
+																//012345678910	인덱스위치
+	// 뒷자리 4자리를 * 로...
+	var result = userPhone.substring(0, userPhone.length - 4) + "****";	//0101234 + **** 
+	document.write(result, "<br>");
+
+	
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//검사할 데이터 또는 입력한 데이터
+	var str = "Html Css Jquery";
+	
+	//정규표현 객체(검사할 데이터를 검사하여 제대로 입력했는지 판단해주는 객체) 생성함.
+	//검색옵션을 지정하지 않은 정규표현객체는? 대문자, 소문자를 구별해서 검사
+
+	//정규표현객체(정규표현식)
+	//var 변수 = /패턴/검색옵션(생략가능);
+	
+	
+	//i 없음 -> 대문자, 소문자를 구분함!!!
+	var reg1 = /css/;					//var reg1 = new RegExp("css");
+	 //변수 str에 저장된 전체 문자열중에서..
+	 //대문자 소문자를 구분하여 "css"라는 문자열이 있는지 검사합니다.
+	 //test()라는 메소드를 사용하여 검사할 문자가 포함되어 있으면 true를 반환하고
+	 //없으면 false를 반환 후 result_1 변수에 저장함
+	var result_1 = reg1.test(str);	 
+	document.write(result_1, "<br>");	//변수str에 저장된 문자열"Css"은 대문자+소문자이므로 
+										//false를 반환
+	 
+		
+	//i -> 대문자, 소문자를 구분하지 않음!!!
+	var reg2 = /css/i;					//var reg2 = new RegExp("css","i");
+	 //변수 str에 저장된 전체 문자열중에서..
+	 //대문자 소문자를 구분하지 않고 "css"라는 문자열이 있는지 검사합니다.
+	 //test()라는 메소드를 사용하여 검사할 문자가 포함되어 있으면 true를 반환하고
+	 //없으면 false를 반환 후 result_2 변수에 저장함
+	var result_2 = reg2.test(str);
+	document.write(result_2, "<br>");	//변수str에 저장된 문자열"Css"이 포함되어 있으므로
+										//true를 반환
+
+</script>
+</head>
+<body>
+</body>
+</html>

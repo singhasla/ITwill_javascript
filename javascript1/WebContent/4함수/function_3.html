@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 함수를 호출했을때 이름과 사는지역의 데이터를
+	함수정의문의 매개변수 name과 area에 각각 전달하여
+	함수 안에 있는 실행문에서 사용하자 -->
+<script type="text/javascript">
+	function myFnc(name, area) {
+
+		document.write("안녕하세요. " + name + "입니다.", "<br>");
+		document.write("사는 곳은 " + area + "입니다.", "<br>");
+	}
+
+	//myFnc("이승하","부산");
+	
+	n = prompt("이름을 입력하세요");
+	a = prompt("사는 곳을 입력하세요");
+	myFnc(n, a);
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+	//Math객체의 random()메소드
+	var randomValue = Math.random();
+	document.write(randomValue, "<br>");	//숫자 0~1 사이에 있는 실수
+	
+	
+	//floor()메소드 - 소수점 첫번째 자리에서 내림해서 정수값만 리턴
+	var randomFloor = Math.floor(Math.random()*10);
+	document.write(randomFloor, "<br>");	//숫자 0~9 정수 
+	
+	//ceil()메소드
+	var randomCeil = Math.ceil(Math.random()*10);
+	document.write(randomCeil, "<br>");		//숫자 1~10 정수 
+	
+	
+	//Math.floor( Math.random() * (최대값-최소값+1) ) + 최소값
+	// 120~150 사이에 있는 난수를 정수로만 발생시키기
+	var number = Math.floor(Math.random() * 31) + 120;
+	document.write(number);	
+	*/
+	
+	//선택문을 사용하여 사용자가 입력한 '가위', '바위', '보'를 숫자로 변환시킨 후,
+	//변수 tNum에 저장한다.
+	//만일 사용자가 '가위', '바위', '보' 이외에 잘못된 값을 입력했을 경우,
+	//window.alert()메소드를 호출하여 "잘못 작성하였습니다"라고 경고 메시지창을 띄우고,
+	//location.reload()메소드를 호출하여 웹브라우저를 재요청하여 새로고침 기능을 발생시키자.
+	
+	var tNum;
+	var t = window.prompt("가위 바위 보 중 하나를 입력하세요");
+	
+	switch (t) {
+	case "가위":
+		tNum = 1;		
+		break;
+		
+	case "바위":
+		tNum = 2;
+		break;
+		
+	case "보":
+		tNum = 3;
+		break;
+		
+	default:
+		window.alert("잘못 작성하였습니다");
+		location.reload();
+		break;
+	}
+	
+	//컴퓨터가 내는 랜덤값 발생(가위:1, 바위:2, 보:3)
+	var com = Math.ceil(Math.random()*3);
+	
+	//이미지 출력되도록...
+	//컴퓨터가 내는 랜덤값으로 이미지 출력
+	document.write("<img src='images/math_img_" + com + ".jpg' />");
+	
+	//사용자가 입력한 값과 컴퓨터가 랜덤으로 내는 값이 일치하는지 조건검사
+	if(tNum == com){
+		alert("맞췄습니다. 축하합니다.");
+	}else if(tNum){
+		alert("틀렸습니다.");
+	}
+	
+</script>
+</head>
+<body>
+	<img src=""/>
+</body>
+</html>

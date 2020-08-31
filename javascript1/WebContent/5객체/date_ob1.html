@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//현재 날짜 정보를 제공해주는 Date객체메모리를 생성
+	var t = new Date();		//메소드를 재활용하기 위해서, t객체를 생성
+
+	//현재 날짜 정보 중에, 현재 월의 정보를 얻고 싶을때
+	//Date객체 내부의 getMonth() 메소드를 호출하여 얻을 수 있다.
+	//참고 : 현재 월의 정보는 1 적게 반환(리턴) 한다.
+	var nowMonth = t.getMonth() + 1;
+	//document.write("현재 월 : " + nowMonth + <br>);
+	
+	
+	//현재 날짜 정보 중에, 현재 일 정보를 얻고 싶을때
+	//Date객체 내부의 getDate() 메소드를 호출하여 얻을 수 있다.
+	var nowDate = t.getDate();
+	//document.write("현재 일 : " + nowDate + <br>);
+	
+	
+	//현재 날짜 정보 중에, 현재 요일 정보를 얻고 싶을때
+	//Date객체 내부의 getDay() 메소드를 호출하여 얻을 수 있다.
+	//요일 정보(0:일요일 ~ 6:토요일)
+	var nowDay = t.getDay();
+	//document.write("현재 요일 : " + nowDay + "<br>");
+	switch (nowDay) {
+	case 0:
+		document.write("일요일" + "<br>");		
+		break;
+	case 1:
+		document.write("월요일" + "<br>");		
+		break;
+	case 2:
+		document.write("화요일"+ "<br>");		
+		break;
+	case 3:
+		document.write("수요일"+ "<br>");		
+		break;
+	case 4:
+		document.write("목요일"+ "<br>");		
+		break;
+	case 5:
+		document.write("금요일"+ "<br>");		
+		break;
+	case 6:
+		document.write("토요일"+ "<br>");		
+		break;
+	}
+	
+	/* --------------------------------------------------------------- */
+	//2002년 한일월드컵의 특정 날짜 정보를 제공할 때는 현재 날짜가 아니라
+	//특정 날짜의 정보를 제공받아야 하므로, 특정 날짜에 대해서
+	//Date객체를 생성해서 사용해야 함.
+	
+	//참조변수 	= new Date(연, 월-1, 일);
+		var	m	= new Date(2002, 4 , 31);	// 2002.5.31의 특정 날짜정보를 갖는 Date객체 생성
+		
+		var theMonth = m.getMonth() + 1;	//Date객체에서 월에 대한 정보만 가져온다
+		var theDate = m.getDate();			//Date객체에서 일에 대한 정보만 가져온다
+		var theDay = m.getDay();			//Date객체에서 요일에 대한 정보만 가져온다
+		
+		document.write("2002년 월드컵 몇 월 : ", theMonth,"<br>");
+		document.write("2002년 월드컵 며칠 : ", theDate, "<br>");
+		document.write("2002년 월드컵 무슨 요일 : ", theDay, "<br>");
+		
+	/* --------------------------------------------------------------- */
+	document.write("<hr>")
+	
+	var date = new Date();
+	
+	//현재 연도 정보 얻자
+	var y = date.getFullYear();
+	//현재 월 정보를 얻자
+	var m = date.getMonth();
+	//현재 일 정보 얻자
+	var d = date.getDate();
+	//현재 시 정보를 얻자
+	var hour = date.getHours();
+	//현재 분 정보를 얻자
+	var min = date.getMinutes();
+	//현재 초 정보를 얻자
+	var sec = date.getSeconds();
+	
+	document.write(y + "." + (m+1) + "." + d  + " " + hour  + ":" + min  + ":" + sec);
+	
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	
+	<!-- 
+		예제 : 사이트 방문자에게 입력받은 걸음수를 조건문으로 만들고,
+				걸음수가 10,000보 이상일 경우에만 출력문 실행
+	 -->
+	<script type="text/javascript">
+		//방문자에게 질의 응답창을 띄워 하루 걸음수를 입력받아 변수에 저장
+		var walkAmount = prompt("당신의 하루 걷는 양은 몇 보 인가요?", "0"); //prompt("메시지","초기값");
+		
+		//만약에 10,000보 이상일 경우?
+		if (walkAmount >= 10000) {
+			document.write("매우 좋은 습관을 지니고 계시는군요!");
+		}
+	
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

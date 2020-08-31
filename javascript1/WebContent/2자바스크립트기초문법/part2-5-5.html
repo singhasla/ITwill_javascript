@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<script type="text/javascript">
+		var a = 10;
+		var b = 20;
+		var c = 10;
+		var f = "20";
+		var result;
+
+		//a변수에 저장되어 있는 값이, b변수에 저장되어 있는 값보다 크냐?라고 묻는 식
+		result = a > b;
+		document.write(result, "<br>"); //result = false
+
+		//a변수에 저장되어 있는 값이, b변수에 저장되어 있는 값보다 작냐?라고 묻는 식
+		result = a < b;
+		document.write(result, "<br>"); //result = true
+
+		//a변수에 저장되어 있는 값이, b변수에 저장되어 있는 값보다 작거나 같냐?라고 묻는 식
+		result = a <= b;
+		document.write(result, "<br>"); //result = true
+
+		//b변수에 저장되어 있는 값이, f변수에 저장되어 있는 값과 같냐?라고 묻는 식
+		result = b == f;
+		//데이터타입과 상관없이 데이터값이 같으므로 참
+		document.write(result, "<br>"); //result = true
+		result = b === f; //데이터 타입이 같냐?
+		document.write(result, "<br>"); //result = false	//b는 숫자타입, f는 문자열타입
+
+		//a변수에 저장되어 있는 값이, b변수에 저장되어 있는 값과 다르냐?라고 묻는 식
+		result = a != b;
+		//데이터타입과 상관없이 데이터값이 다르므로 참
+		document.write(result, "<br>"); //result = true
+		result = a !== b; //데이터 타입이 다르냐?
+		document.write(result, "<br>"); //result = true		//a는 숫자타입, b는 문자열타입
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	
+	<script type="text/javascript">
+	
+		var num1 = 10;
+		var num2 = 20;
+		var result;
+		
+		num1--;		//변수 num1에 데이터가 1 감소 했으므로, num1에는 현재 9가 저장됨
+		document.write(num1,"<br>");
+		
+		num1++;		//변수 num1에 데이터가 1 증가 했으므로, num1에는 현재 10이 저장됨
+		document.write(num1,"<br>");
+		
+		
+		result = num2++;				//대입연산자가 먼저 실행되고, 그다음 증가연산자가 실행됨
+		document.write(result,"<br>");	//result = 20
+		document.write(num2,"<br>");	//num2 = 21
+		
+		result = ++num2;				//증가연산자가 먼저 실행되고, 그다음 대입연산자가 실행됨
+		document.write(num2,"<br>");	//num2 = 22
+		document.write(result,"<br>");	//result = 22
+		
+		
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//주제 : 문자열(문자, String)객체의 메소드를 이용하여 사용자에게 
+	//		 입력받은 이메일의 유효성을 검사한 예제
+	
+	
+	//이메일을 입력받음
+	var userEmail = prompt("당신의 이메일 주소는 ?", "");
+	
+	//이메일 주소에 뒷부분 형식을 배열로 저장
+	var arrUrl = [".co.kr", ".com", ".net", "or.kr", ".go.kr"];
+	//					0		1		2		3		4
+	
+	var check1 = false;		//초기값 설정
+	var check2 = false;		//초기값 설정
+	
+	
+	//방문자가 입력한 이메일 주소에 "@"가 포함되어 있으면 변수 check1에 true가 저장되도록 함
+	if(userEmail.indexOf("@") > 0)
+		check1 = true;
+	
+	/* 
+		for문을 사용하여 arrUrl변수가 참조하는 배열에 데이터의 개수만큼 실행문 반복
+		그리고 사용자가 입력한 이메일 문자열에 arrUrl 값들이 포함되어 있는지
+		indexOf("찾을 문자")를 이용해 검사한다.
+		이때 찾는 문자가 포함되어 있으면 변수 check2에 true를 저장
+	*/
+	//입력한 이메일의 배열 데이터 포함 여부 검사
+	for(var i = 0; i < arrUrl.length ; i++){
+		
+		//배열에 저장된 데이터가 입력한 이메일 문자열에 포함되어 있으면 변수 check2에 true를 저장
+		if(userEmail.indexOf(arrUrl[i]) > 0){
+			check2 = true;
+		}
+		
+	}
+	
+	//check1과 check2변수에 true가 저장되어 있으면 정상적으로 이메일을 출력합니다.
+	//하지만 한개라도 false가 나오면 "이메일 형식이 잘못 되었습니다"라고 경고창을 띄웁니다.
+	//-> AND(&&) 연산자는 모두 피연산자가 모두 true여야 true를 반환합니다.
+	if(check1 && check2){
+		document.write(userEmail);
+	}else{
+		alert("이메일 형식이 잘못되었습니다.");	
+		//document.write(check1);
+		//document.write(check2);
+	}
+	
+</script>
+</head>
+<body>
+</body>
+</html>

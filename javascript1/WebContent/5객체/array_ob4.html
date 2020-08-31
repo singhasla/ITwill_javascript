@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	var greenLine = ["사당", "교대", "방배", "강남"];
+	
+	var yellowLine = ["미금", "정자", "모란", "수서"];
+	
+	//concat()메소드 -> 2개의 배열객체가 하나로 결합되어 하나의 배열객체로 생성됨
+	var twoLine = greenLine.concat(yellowLine);
+	document.write("concat : ", twoLine, "<br>");
+	
+	//pop()메소드 -> 배열 전체 데이터 중 마지막 인덱스 위치에 저장된 데이터만 삭제
+	greenLine.pop();
+	document.write("pop : ", greenLine, "<br>");
+	
+	//push()메소드 -> 마지막 인덱스 위치에 새로운 데이터 삽입
+	greenLine.push("삼성");
+	document.write("push : ", greenLine, "<br>");
+	
+	//shift()메소드 -> 첫번째 인덱스 위치에 데이터를 삭제
+	greenLine.shift();
+	document.write("shift : ", greenLine, "<br>");
+	
+	//unshift()메소드 -> 맨앞 인덱스 위치에 신도림 삽입
+	greenLine.unshift();
+	document.write("unshift : ", greenLine, "<br>");
+</script>
+</head>
+<body>
+</body>
+</html>

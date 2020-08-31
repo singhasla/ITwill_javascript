@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/* Math객체
+		- Math객체는 수학에서 자주 사용하는 상수와 함수들을 미리 구현해 놓은 내장 객체이다
+		- Math객체는 객체를 생성하지 않아도 Math객체의 모든 메소드나 속성을 바로 사용할 수 있다.
+	*/
+	
+	var num = 2.1234;
+	
+	// Math.max() , Math.min()
+	var maxNum = Math.max(10, 5, 8, 30);	//숫자 중에 가장 큰 값 반환
+	var minNum = Math.min(10, 5, 8, 30);	//숫자 중에 가장 작은 값 반환
+	
+	
+	// Math.round()메소드 : 반올림
+	//	- 인수로 전달받은 값을 소수점 첫번째 자리에서 반올림하여 그 결과값을 반환함
+	var roundNum = Math.round(num);		// 2
+	
+	
+	// Math.floor()메소드 : 버림
+	//	- 인수로 전달받은 값과 같거나 작은 수 중에서 가장 큰 정수를 반환함
+	//	소수점이하 버림
+	var floorNum = Math.floor(num);		// 2
+	var floorNum2 = Math.floor(10.95);	// 10
+	var floorNum3 = Math.floor(11.01);	// 11
+
+	
+	// Math.ceil()메소드 : 올림
+	//	- 인수로 전달받은 값을 소수점 첫번째 자리에서 올림하여 그 결과값을 반환함
+	var ceilNum = Math.ceil(num);		// 3
+	
+	
+	// Math.random()메소드
+	// - 0에서부터 1보다 작은 랜덤값(난수)를 발생시켜 반환함
+	var rndNum = Math.random();			// 범위 : 0 <= x <0.99999.....
+	
+	
+	// Math.pow(x,y)메소드
+	// - x의 y승(x^y)의 값을 반환함
+	var powNum = Math.pow(2, 3);
+	
+	
+	// Math.PI 상수
+	// -> 3.141592..... 반환함
+	var piNum = Math.PI;				// 3.141592.....
+	
+</script>
+</head>
+<body>
+</body>
+</html>

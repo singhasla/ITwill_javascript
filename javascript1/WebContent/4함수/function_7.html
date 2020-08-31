@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 
+	예제 주제 : 함수 정의문 내에 실행문을 실행한 후, 
+	계산된 결과값을 return구문 으로 
+	함수 호출문에 되돌려 주는 예제
+ -->
+<script type="text/javascript">
+	//함수 정의문
+	function myFnc(a, b) {
+		var num = a * b;
+
+		return num; //함수를 호출한 장소로 num변수의 값을 반환
+	}
+
+	//함수 호출문
+	var result = myFnc(10, 3);	// return으로 반환된 num값이 result변수에 저장
+	document.write(result);
+	
+</script>
+
+</head>
+<body>
+</body>
+</html>

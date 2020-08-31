@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//배열 객체의 메소드인 splice()와 slice()를 사용한 예제
+	//참고
+	//splice()메소드를 이용하여 배열에 지정한 인덱스 위치의 데이터를 삭제한 후 
+	//새 데이터를 삽입
+	
+	//slice()메소드를 이용하여 배열의 일부 데이터만 잘라서 
+	//새로운 배열 객체로 만들어서 불러옴
+	var greenLine = ["사당", "교대", "방배", "강남"];
+	
+	var yellowLine = ["미금", "정자", "모란", "수서"];
+	
+	//순서1. var greenLine = ["사당", "교대", "방배", "강남"];
+	
+	//순서2. var greenLine = ["사당", "교대", "    ", "강남"];
+	
+	//순서3. var greenLine = ["사당", "교대", "서초", "역삼", "강남"];
+	
+	greenLine.splice(2, 1, "서초", "역삼");	//순서2	-> 순서3
+	document.write(greenLine,"<br>");		
+	
+	
+	//
+	document.write(greenLine.slice(1,3), "<br>");
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	var num = 0;
+	
+	function testFnc(){
+		
+		//num변수의 값을 1 증가 시킴
+		num++;
+		document.write(num, "<br>");
+		//num변수의 값이 10일 경우, 함수를 강제로 종료 시켜 
+		//더는 재귀함수를 호출할 수 없도록 하기
+		if(num==10){
+			return;
+		}	
+	
+		//재귀함수 호출 : 자기 자신의 함수를 재 호출!
+		testFnc();
+	}
+	
+	//함수 호출문
+	testFnc();
+	
+
+</script>
+</head>
+<body>
+</body>
+</html>

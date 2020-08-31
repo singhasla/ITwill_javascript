@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+		
+	</head>
+	<body>
+	
+		<script type="text/javascript">
+			//사이트 방문자에게 질의 응답창을 띄워 현재 몇 월인지를 입력받아 변수에 저장
+			var month = prompt("현재 월을 입력하세요", "0"); //prompt("메시지","초기값");
+			
+			if (month >= 9 && month <= 11) {		//9월~11월 사이를 입력했다면
+				document.write("독서의 계절, 가을이네요!");
+			}else if (month >= 6 && month <= 8){	//6월~8월 사이를 입력했다면
+				document.write("여행가기 좋은 여름이네요!");
+			}else if (month >= 3 && month <= 5){	//3월~5월 사이를 입력했다면
+				document.write("햇살 가득한 봄이네요!");
+			}else if(month == 1 || month == 2 || month == 12){	//12월~2월 사이를 입력했다면
+				document.write("스키의 계절, 겨울이네요!");
+			}else{
+				document.write("1~12 사이의 숫자를 입력하세요");
+			}
+		
+		</script>
+		
+	</body>
+</html>

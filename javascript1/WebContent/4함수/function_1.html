@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//	주제 :	함수 정의문과 익명함수를 변수에 참조시키는 
+	//			두가지 방식으로 함수를 선언한 것을 호출하여
+	//			실행문을 실행한 예제
+
+	var i = 0;
+
+	//함수정의문 : 함수 만들기 방법1
+	function myFnc() { //함수의 기능 -> i변수의 값을 1증가시키고, 
+		//hello + i 변수의 값을 출력해주는 함수
+		i++;
+		document.write("hello " + i, "<br>");
+	}
+
+	//함수 호출 방법1
+	myFnc(); //i=1
+	myFnc(); //i=2
+	myFnc(); //i=3
+	myFnc(); //i=4
+	myFnc(); //i=5
+
+	/* ---------------------------------------------------------------------- */
+
+	//함수정의문 : 함수 만들기 방법2
+	var theFnc = function() {
+
+		i++;
+		document.write("bye " + i, "<br>");
+	}
+
+	//함수 호출 방법2
+	theFnc(); //변수 theFnc에 저장되어 있는 익명함수 호출 
+	theFnc();
+	theFnc();
+	theFnc();
+	theFnc();
+</script>
+</head>
+<body>
+</body>
+</html>

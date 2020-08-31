@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+	주제 : new 키워드와 기본 객체 생성함수 Object()를 이용하여 객체 메모리 생성 해보기 
+ -->
+<script type="text/javascript">
+
+	// new 키워드와 객체생성함수를 이용해 
+	// 새로운 객체메모리를 생성한 후에
+	// tv변수에 참조
+	var tv = new Object();		// tv변수는 Object()객체를 참조하는 변수(Object객체의 주소번지를 가지고 있음)
+	
+	// tv변수에 저장되어 있는 객체의 내부에 
+	// width, height, weight, color속성을 생성해서 저장
+	tv.width = "30cm";
+	tv.height = "25cm";
+	tv.weight = "20kg";
+	tv.color = "white";
+	
+	//생성된 tv객체에 off 기능을 하는 메소드를 만들어놓자
+	tv.off = function(){
+		document.write("전원 off","<br>");
+	}
+	
+	
+	//tv객체의 너비값을 얻어 출력하고자 할때,
+	document.write(tv.width,"<br>");
+	//tv객체의 높이값을 얻어 출력하고자 할때,
+	document.write(tv.height,"<br>");
+	//tv객체의 무게값을 얻어 출력하고자 할때,
+	document.write(tv.weight,"<br>");
+	//tv객체의 색상값을 얻어 출력하고자 할때,
+	document.write(tv.color,"<br>");
+	
+	
+	//tv객체의 전원off 기능을 사용하고자 할때,
+	//메소드 호출
+	tv.off();
+	
+</script>
+</head>
+<body>
+</body>
+</html>

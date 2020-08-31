@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//새 팝업창 띄우기
+	var pop = window.open("winpopup.html", "pop1", "width=300, height=400,	left=300, top=10, scrollbars=yes, toolbars=yes, location=no");
+
+</script>
+</head>
+<body>
+	<!-- 
+	버튼을 클릭했을때 자바스크립트의 코드가 실행되어
+	변수 pop이 참조하고 있는 팝업창의 위치를 모니터 기준으로
+	왼쪽에서 200px만큼 이동하고, 위쪽에서 300px만큼 이동
+	또한 팝업창에 focus()메소드를 적용해 가장 앞으로 띄움
+	-->
+	<button onclick="pop.moveTo(200, 300); pop.focus();">브라우저 창 위치 변경</button>
+	
+	<br><Br>
+	
+	<!-- 
+	버튼을 클릭했을때 팝업창의 너비가 200px, 높이가 300px로 바뀜
+	또한 팝업창에 focus()메소드를 적용해 가장 앞으로 띄움
+	-->
+	<button onclick="pop.resizeTo(200, 300); pop.focus();">브라우저 창 크기 변경</button>
+</body>
+</html>

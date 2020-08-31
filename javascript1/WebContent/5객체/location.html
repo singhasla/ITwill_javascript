@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	/* 
+		location객체를 사용하여 현재 주소영역에 참조주소(URL) 정보를 출력한 예제
+		참고 : location객체는 로컬 컴퓨터에서는 href속성만 지원되므로
+		웹호스팅(웹서버)에 올리고 테스트 해야 정상적으로 실행됨
+	*/
+	
+	//클라이언트가 location.html페이지를 요청한 주소(URL)를 가져옴
+	document.write("href : " + location.href, "<br>");
+	//클라이언트가 location.html페이지를 요청한 전체URL주소 중 도메인 주소만 가져옴
+	document.write("hostname : " + location.hostname, "<br>");
+	//클라이언트가 location.html페이지를 요청한 전체URL주소 중 프로토콜의 종류를 가져옴
+	document.write("protocol : " + location.protocol, "<br>");
+	//클라이언트가 location.html페이지를 요청한 전체URL주소 중 도메인 주소와 포트번호를 가져옴
+	document.write("protocol : " + location.host, "<br>");
+	
+	//★★★재요청할 페이지를 재요청해, 이동하는 동작이 일어난다★★★
+	//location.href = "재요청할 페이지주소!";
+	location.href = "http://www.naver.com";
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//전역변수
+	var num = 200;
+	
+	//함수정의문
+	function myFnc(){
+		
+		//지역변수
+		var num = 500;
+	}
+	
+	myFnc();
+	
+	document.write(num);	//전역변수인 200 출력
+
+</script>
+</head>
+<body>
+</body>
+</html>

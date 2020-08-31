@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var num1 = 3.456789;
+	var num2 = 700000;
+	var num3 = "30.5px";
+	var num4 = 40;
+	
+	//num1변수에 저장된 값 3.456789를 toPrecision()메소드를 이용하여
+	//유효한 숫자 2개(3.4)에 반올림해서
+	//3.5를 문자열 형태로 변환해서 반환
+	document.write(num1.toPrecision(2), "<br>");
+	
+	
+	//num3변수에 저장된 값 "30.5px"를 parseFloat()메소드를 호출하여
+	//실수만 남겨 30.5로 변환하여 반환하고,
+	//num4변수의 값 40을 더함
+	document.write(parseFloat(num3) + num4, "<br>");
+	
+	
+	//num3변수에 저장된 값 "30.5px"를 parseInt()메소드를 호출하여
+	//정수만 남겨 숫자타입 30을 반환하고
+	//num4변수의 값 40을 더함
+	document.write(parseInt(num3) + num4, "<br>");
+	
+	
+	//num1변수에 저장된 값 3.456789를 toString()메소드를 호출하여
+	//문자열 "3.456789"로 변환하여 반환
+	document.write(num1.toString(), "<br>");
+	
+	
+	//num1변수에 저장된 값 3.456789를 toFixed()메소드를 호출하여
+	//지정한 고정 소수점 자리만큼 반올림하여 표기한다
+	//소수점 두(2)번째 자리까지 표기되고, 소수점 셋째자리에서 반올림한
+	//3.46으로 출력됨
+	document.write(num1.toFixed(2), "<br>");
+	
+	
+	//num2변수에 저장된 숫자객체의 toExponential()메소드 호출 시 1(소수점 자리수)을 전달하면,
+	//700000을 지정한 고정 소수점 자리만큼 지수표기법으로 값을 반환한다
+	//소수점 첫(1)번째 자리까지 표기되고, 7.0 * 100000 이므로
+	//지수표기법은 7.0e+5로 표기됨
+	document.write(num2.toExponential(1), "<br>");
+
+</script>
+</head>
+<body>
+</body>
+</html>
