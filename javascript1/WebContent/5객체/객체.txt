@@ -330,7 +330,7 @@
 													- 노드타입의 종류
 														종류										 타입값
 														요소(Element)노드							    1
-														속성(Attribute)노드							2
+														속성(Attribute)노드								2
 														텍스트(Text)노드								3
 														
 														
