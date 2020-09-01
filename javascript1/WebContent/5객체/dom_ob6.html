@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM객체</title>
+</head>
+<body>
+	<!-- 서버페이지인 .jsp 페이지로 요청시 값을 전송하는 역할을 함 -->
+	<form action="요청할 서버페이지 주소" method="get" name="f1">
+		<!-- method = "전송방식을 설정. get 또는 post" -->
+
+		<fieldset>
+			<legend>폼 요소1</legend>
+			<p>
+				<label>비밀번호</label>
+				<input type="password" name="user_pw1" id="user_pw1" />
+			</p>
+			<p>
+				<label>비밀번호 확인</label>
+				<input type="password" name="user_pw2" id="user_pw2" />
+				
+				<input type="submit" value="확인" />
+			</p>
+		</fieldset>
+	</form>
+	
+	<script type="text/javascript">
+	
+		//위의 form요소를 선택해서 가져와서
+		//확인(전송) 버튼을 클릭했을 때, 이벤트 핸들러(처리함수) function()이 실행되게 선언
+		document.f1.onsubmit = function() {
+			
+			//비밀번호 입력 요소 중에서, <input>요소의 name속성 값이 "user_pw1"인 요소를
+			//선택해서 가져와서 pw1변수에 저장 
+			var pw1 = document.f1.user_pw1;
+			
+			//비밀번호확인 입력요소를 선택해서 가져와서 pw2변수에 저장
+			var pw2 = document.f1.user_pw2;
+			
+			//방문자가 작성한 비밀번호값을 비밀번호확인 <input>요소의 value 속성값으로 입력되도록 설정
+			pw2.value = pw1.value;
+			
+			//비밀번호확인 <input>요소에 더이상 입력할 수 없게 비활성화 시키기
+			pw2.disabled = true;
+			
+			//이벤트 핸들러(처리함수) return false를 작성하면 
+			//form태그의 action속성의 jsp페이지로 이동되는 것을 차단 시켜 준다.
+			return false;
+		}
+		
+	</script>
+</body>
+</html>

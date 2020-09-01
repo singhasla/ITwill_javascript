@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM객체</title>
+</head>
+<body>
+	<div>
+	
+		<h1 id="title">마우스 아웃</h1>
+		
+		<a href="#" id="btn"><img src="images/btn_out.gif"/></a>
+		
+		<p id="img_src"></p>
+		
+		<script type="text/javascript">
+		
+			//id속성값이 "btn"인 <a>요소를 선택해서 가져와서 theBtn변수에 저장
+			var theBtn = document.getElementById("btn");
+			
+			//id속성값이 "img_src"인 <p>요소를 선택해서 가져와서 s변수에 저장
+			var s = document.getElementById("img_src");
+			
+			//id속성값이 "btn"인 <a>요소에, 마우스를 올리는 행위(동작)를 등록하여
+			//사용자가 <a>요소에 마우스를 올릴때마다 이벤트가 발생하게 되어
+			//function()코드가 실행되게 선언
+			theBtn.onmouseover = function() {
+		
+				//★★★★★★★★★★중요!!★★★★★★★★★★
+				//id속성값이 "title"인 <h1>요소의 텍스트노드 값을
+				//"마우스 아웃"에서 "마우스 오버"로 변경하자
+				//★★★★★★★★★★★★★★★★★★★★★★★
+				document.getElementById("title").innerHTML = "마우스 오버";	//★★★★★★★★★★
+				
+				
+				//<img>요소를 선택해서 가져와서 src속성의 값을 "image/btn_over.gif"로 변경시켜
+				//마우스오버 된 이미지로 바뀌게 하자
+				theBtn.children[0].src = "images/btn_over.gif";
+				
+				
+				//마우스오버된 <img>요소를 선택해서 가져와서 src속성값을
+				//<p>요소의 텍스트노드 위치에 출력하자
+				s.innerHTML = theBtn.children[0].src;
+		
+			}
+			
+			
+				//<a id="btn">요소에서 마우스 포인터를 벗어나는 행위(onmouseout)를 했을때...
+			theBtn.onmouseout = function() {
+				//id속성값이 title인 <h1>요소의 텍스트 노드값을 마우스아웃으로 바뀌게 하고,
+				document.getElementById("title").innerHTML = "마우스 아웃";
+				//<img>요소를 선택해 src속성값을 "images/btn_out.gif"로 변경시켜 
+				//마우스 아웃된 이미지가 나오도록 하기
+				theBtn.children[0].src = "images/btn_out.gif";
+				
+				//마우스아웃된 <img>태그를 선택해 <img>태그의 src속성값을 얻어
+				//<p>요소의 텍스트노드 위치에 설정하여 출력하자
+				s.innerHTML = theBtn.chidren[0].src;
+				
+			}
+			
+			
+		</script>
+	</div>
+</body>
+</html>

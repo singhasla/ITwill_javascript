@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM객체</title>
+</head>
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+	
+	<script type="text/javascript">
+		//id속성값이 "wrap"인 <div>를 선택하고,
+		//이 <div>요소를 기준으로 인접관계선택자인 children를 이용해
+		//첫번째 자식 <p>내용1</p>요소를 최종선택해
+		//글자를 빨간색으로 적용
+		document.getElementById("wrap").children[0].style.color = "red";
+		
+		
+		
+		//반복문의 조건식에 노드타입의 값을 검사하여 요소노드가 아닐 경우에는
+		//계속해서 다음 요소가 선택되도록 반복문을 이용함
+		//정상적으로 nextObject에 요소노드가 저장되면 노드 타입값이 1이 되므로
+		//반복문이 종료가 되고 배경색이 노란색으로 적용
+		
+		//<p>내용2</p>
+		var p = document.getElementsByTagName("p")[1];
+		
+		//<p>내용3</p>
+		var nextObject =  p.nextSibling;
+		//var value = nextObject.nodeType;
+		//document.write(value);
+		while(nextObject.nodeType != 1){
+			nextObject = nextObject.nextSibling;
+		}
+		
+		nextObject.style.backgroundColor = "yellow";
+			
+	</script>
+</body>
+</html>
