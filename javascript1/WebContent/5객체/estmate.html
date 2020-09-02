@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kor" xml:lang="ko">
+<head>
+<title>자동차 견적서</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 12px/1.5 dotum, "돋움", gulim, "굴림", sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+table {
+/*     collapse (테두리 합침) */
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h1 {
+	text-align: center;
+}
+
+#carZone {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#estimate {
+	width: 100%;
+}
+
+#estimate th, td {
+	border: 1px solid #ccc;
+	height: 30px;
+}
+
+#estimate th {
+	background-color: #333;
+	color: #fff;
+}
+
+#carZone td {
+	text-align: center;
+}
+
+tfoot {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#total {
+	border: none 0;
+	background: none;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	
+	/* 
+		<form>요소 속성의 종류
+		
+		구분			 속성					설명
+		-----------------------------------------------------------------------------------------
+		전체			value				입력요소의 value속성을 변경하거나 값을 가져옴
+		
+						disabled			입력요소의 disabled속성을 변경하거나 
+											현재상태의 값을 가져옴
+										
+						defaultValue		입력요소 초기에 입력된 value속성값을 가져옴
+		-----------------------------------------------------------------------------------------
+		체크박스,		checked				체크박스 또는 라디오버튼 태그에 체크 상태값을
+		라디오버튼							반환하거나 또는 체크 여부를 제어 할수 있음
+											체크되어 있으면 true, 해제되어 있으면 false
+		-----------------------------------------------------------------------------------------
+		선택박스		selected			<select>태그에 <option>선택된 상태의 값을 가져옴.
+											<option>태그가 선택되어 있을 경우에는 true를 반환하고
+																		  아니면 false를 반환.
+											
+		 
+	*/
+	
+	
+	/* 
+		자동차 옵션 체크박스를 클릭할 때 마다 호출 되는 함수를 만들자
+		car()함수는 기본차량 금액에 체크한 옵션금액을 더해서 계산해주는 함수
+	*/
+	
+	function car(){
+												
+		//defaultValue속성은? <input>요소에 초기에 입력되어 있는 value속성값을 가져옴
+		//Number()함수는 문자열데이터를 숫자형데이터로 변환해서 얻어올 수 있음
+		
+		//->기본 차량 금액 얻기
+		var basic_price = Number(document.getElementById("total").defaultValue);
+		
+		//3번 반복
+		for(var i =1;i<=3;i++){
+			
+			//id속성값이 opt1~3까지인 체크박스<input>요소를 선택해서 가져와서
+			//체크박스에 체크가 되어있으면, 추가옵션가격을 기본차량금액에 누적시키기
+			var chkObj = document.getElementById("opt"+i);
+			
+			if(chkObj.checked == true){
+				basic_price += Number(chkObj.value);
+			}
+		}//for
+			
+		
+		//위에서 더해진 가격을 id속성값이 total인 요소의 value속성값으로
+		//설정해서 화면에 최종금액이 출력되도록...
+		document.getElementById("total").value = basic_price;
+	}
+	
+	
+</script>
+</head>
+<body>
+	<h1>자동차 견적</h1>
+	<div id="carZone">
+		<p>
+			<img src="images/car1.jpg" alt="자동차" />
+		</p>
+		<table id="estimate">
+			<colgroup>
+				<col width="380px" />
+				<col width="160px" />
+				<col width="*" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="row">옵 션</th>
+					<th scope="row">추가 가격</th>
+					<th scope="row">선택</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th scope="col">(기본)차량가격</th>
+					<td colspan="2">
+						<input type="text" name="total" id="total" value="13450000" readonly="readonly" />
+					</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td><label for="opt1">인조가죽시트</label></td>
+					<td>250000</td>
+					<td>
+						<!-- 옵션 체크박스에 클릭할 때 마다 car()에 저장된 
+    						일련의 실행문을 실행합니다. --> 
+    					<input type="checkbox" name="opt1" id="opt1" value="250000" onclick="car();" />
+					</td>
+				</tr>
+				<tr>
+					<td><label for="opt2">내비게이션</label></td>
+					<td>250000</td>
+					<td><input type="checkbox" name="opt2" id="opt2" value="250000" onclick="car();" /></td>
+				</tr>
+				<tr>
+					<td><label for="opt3">선루프</label></td>
+					<td>440000</td>
+					<td><input type="checkbox" name="opt3" id="opt3" value="440000" onclick="car();" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
