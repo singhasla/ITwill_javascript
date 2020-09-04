@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		//<img> 동적으로 객체 생성
+		var img = document.createElement("img");
+		//<img>태그(객체)의 setAttribute("추가시킬 속성명", "추가할 속성값");
+		//메소드를 사용하여 <img src=".jpg"> src속성과 값을 추가하자
+		img.setAttribute("src", "window_object_1.jpg");
+		img.setAttribute("width", "200");
+		img.setAttribute("height", "200");
+	 
+		//<body></body>요소를 선택해 <img src="window_object1.jpg">요소를 자식요소로 추가
+		document.body.appendChild(img);
+	</script>
+</body>
+</html>

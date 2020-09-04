@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	
+		window.onload = function(){
+
+		//"<h1></h1>"
+		// createElement("생성할 태그명") 메소드를 사용하여 <h1>객체 생성
+		var header = document.createElement("h1")
+		
+		//문자열 값을 갖는 Text노드 생성 "DOM생성"
+		var headerText = document.createTextNode("DOM생성");
+		
+		// appendChild메소드 호출 시, 자식 Text노드를 전달하여 추가
+		//<h1>DOM생성</h1>
+		header.appendChild(headerText);
+		
+		//<body>태그에 위에서 생성한 h1 Element노드 (<h1>DOM생성</h1>)를 추가한다.
+		document.body.appendChild(header);
+
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>
