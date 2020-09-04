@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		// 예제 : 버튼에 두가지 방식으로 onclick이벤트와 onmouseover이벤트를 등록시켜
+		//			event_1.html을 방문한 사용자가 버튼을 클릭했을 때,
+		//			<body>요소 영역의 배경색이 바뀌도록 한 예제.
+		
+		//배경에 쓰일 색상 데이터를 배열에 저장
+		var color = ["white", "pink", "aqua", "green"];
+		
+		var i = 0;
+		
+		function colorBg(){
+			i++;	//i변수의 값을 1 증가
+			
+			if(i >= color.length){
+				i = 0;
+			}
+			//body요소를 선택해서 가져와서
+			var bodyTag = document.getElementsByTagName("body")[0];
+			//body요소의 배경색을 color배열의 i변수 번째 인덱스 위치의 색상으로 설정 
+			bodyTag.style.backgroundColor = color[i];
+		}
+		
+		//웹브라우저가 event_1.html파일의 <body>요소영역의 코드를 모두 읽어 들였을때(행위)를 표현
+		window.onload = function() {
+
+			//id속성값이 btn2인 <button>요소를 선택해서 가져와서
+			var btn2 = document.getElementById("btn2");
+			//<button id="btn2">버큰2</button>
+			
+			//<button>요소에 클릭 이벤트를 등록
+			btn2.onclick = function () {
+				colorBg();		//함수를 호출하여 클릭할 때마다 배경색이 바뀌도록
+			}
+			
+			var btn4 = document.getElementById("btn4").onmouseout = function() {
+				colorBg();
+			}
+			
+		}
+		
+	</script>
+</head>
+<body>
+		<!-- 1. 버튼요소에 직접 onclick이벤트를 등록하여 클릭할 때마다 colorBg()함수 호출하기 -->
+	<p>
+		<button onclick="colorBg();">버튼1</button>
+	</p>
+
+		<!-- 2. 버튼요소를 만들고, 위의 자바스크립트 구문으로 선택해 가서 이벤트를 등록 -->
+	<p>
+		<button id="btn2">버튼2</button>
+	</p>
+	
+	
+	
+	<!-- 1번방식으로 버튼요소에 직접 onmouseover이벤트를 등록하여 버튼요소에 마우스 포인터를 올리는 행위를 하면
+			colorBg()함수가 호출되게 하여 배경색이 바뀔 수 있도록 하기									 -->		
+	<p>
+		<button onmouseover="colorBg();">버튼3</button>
+	</p>
+	
+	<!-- 2번방식으로 onmouseout이벤트를 등록하여 버튼요소에 마우스 포인터가 올라간 상태에서
+			마우스포인터가 벗어났을 때 행위를 하면 colorBg()함수가 호출되게 하여 배경색이 바뀔 수 있도록 하기 -->
+	<p>
+		<button id="btn4">버튼4</button>
+	</p>
+	
+</body>
+</html>
