@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	전송버튼을 클릭했을때 this키워드를 이용해 이벤트가 발생한 <form>요소를 
+	함수의 매개변수로 전달하고, 이 <form>요소에 방문자가 입력한 값이 
+	정규표현식 패턴에 맞게 되었으면 
+	<form>요소의 action 속성에 지정한 페이지로 값들을 전송하는 예제.
+-->
+
+	<script type="text/javascript">
+	
+		//함수의 역할 :
+		// ->		웹페이지 방문자가 입력한 이름과 연락처가 정해진 정규패턴에 맞게 작성되었는지 검사함.
+		//			만약 틀리게 작성했을 경우에는 경고창을 띄우고 다시 작성을 유도할 수 있도록 입력란에 포커스를 준다
+		function submit_chk(myForm){
+			
+			//한글 2~5사이로 입력 햇는지 판단하는 정규 표현식 생성
+			var reg1 = /^[가-힣]{2,5}$/;
+			//입력한 연락처를 검사하기 위해 작성 첫글자는 010, 015, 011중 하나로 시작되어야 하고
+			//다음은 숫자 3~4개까지 오게 하고, 마지막으로 숫자 4개가 입력 되었는지 판단한는 정규 표현식 생성
+			var reg2 = /^(010|011|016)\d{3,4}\d{4}$/;
+			
+			
+			//이름을 입력하는 <input type = "text" name="user_name">요소를 선택해서 가져와 변수 name에 저장
+			var name = myForm.user_name;
+			//연락처를 입력하는 <input type = "text" name="user_tel">요소를 선택해서 가져와 변수 tel에 저장
+			var tel = myForm.user_tel;
+			
+			
+			//방문자가 입력한 이름이 정규표현식의 패턴에 맞게 작성되었는지 검사
+			var result1 = reg1.test(name.value);	//정규표현패턴에 맞게 작성되면, true리턴	
+													//정규표현패턴에 어긋나게 작성되면, false리턴
+			//방문자가 입력한 연락처가 정규표현식의 패턴에 맞게 작성되었는지 검사
+			var result2 = reg2.test(tel.value);
+		
+			
+			if(!result1){			//입력한 이름이 정해진 규칙에 어긋나게 작성했을 경우
+				alert("이름 입력이 잘못 되었습니다");
+				//이름 입력할 수 있는 곳에 입력된 값을 공백으로 주고, 삭제해주자.
+				name.value = "";
+				//포커스 주기
+				name.focus();
+				//<form>요소의 action속성의 index.jsp로 전송되는 것을 차단하기 위해
+				//<form>요소로 return false를 이용해 false값을 리턴
+				return false;
+			}else if(!result2){		//입력한 연락처가 정해진 규칙에 어긋나게 작성했을 경우
+				alert("연락처 입력이 잘못 되었습니다");
+				tel.value = "";
+				tel.focus();
+				return false;
+			}
+		}
+		
+		//가입 취소버튼을 눌렀을 때 다시 한번 더 취소 할건지 묻는 창을 띄우고
+		//묻는 창에는 확인 / 취소 버튼이 존재한다.
+		function reset_chk(myForm){
+			
+			var result = window.confirm("정말 회원가입을 취소 하시겠습니까?");
+			
+			//만일 취소버튼을 눌렀을 때, false를 반환하여 가입취소가 실행되지 않게
+			if(result){
+				return false;
+			}
+		}
+	
+	</script>
+</head>
+
+
+<!-- 웹브라우저가 <body>에 하위요소를 모두 로딩했을때, 이름을 입력하는 <input>요소에 포커스를 이동시킨다 -->
+<body onload="document.f1.user_name.focus();">
+
+		<!-- 
+			onsubmit="return submit_chk(this)"는 회원가입(전송)버튼을 눌렀을 때, 함수 submit_chk()를 호출한다/
+			여기서  this키워드는 전송 이벤트가 발생한 <form>요소를 말한다.
+			return은 함수에서 false를 반환받으면 action속성에 작성된 서버페이지로 데이터 전송을 취소시킴.
+			return은 함수에서 true를 반환받으면 action속성에 작성된 서버페이지로 데이터 전송함.
+		-->	
+		<!--
+			onreset="return reset_chk(this)"는 가입취소버튼을 클릭했을 때,
+		 -->
+		<form action="index.jsp" name="f1" onsubmit="return submit_chk(this);" onreset="return reset_chk(this);">
+		
+			<fieldset>
+				<legend>회원가입</legend>
+				<p><label>이름</label>
+					<input type ="text" name="user_name" id="user_name"/>
+				</p>
+				<p><label>연락처</label>
+					<input type ="text" name="user_tel" id="user_tel"/>
+				</p>
+				<p>
+					<input type ="submit" value="회원가입"/>
+					<input type ="reset" value="가입취소"/>
+				</p>
+				
+				
+			</fieldset>
+		
+		</form>
+		
+</body>
+</html>
