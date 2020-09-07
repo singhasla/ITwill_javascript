@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function CheckID() {
+		//ID입력 <input>선택해서 가져와서 uID변수를 선언하여 저장
+		var uID = document.getElementById("uID");
+		
+		//입력한 아이디값이 3자 미만이거나 8자를 초과할 경우
+		if(uID.value.length<3 || uID.value.length>8){
+			//아이디는 3자이상 8자 이내로 입력해야 합니다	<-- 경고메시지창 띄우기
+			alert("아이디는 3자이상 8자 이내로 입력해야 합니다.");
+			//아이디 입력<input>요소에 공백을 주어 입력햇던 내용이 삭제되는 효과
+			uID.value = "";
+			//CheckID()함수 빠져나가기
+			return false;
+			
+		}else{	//입력한 아이디 값이 3자 미만이거나 8자를 초과하지 않을 경우(제대로 입력했다면)
+			
+			//"아이디를 정말 사용하시겠어요?" 메시지와 함께 Confirm()창을 띄우고
+			//확인 버튼을 눌렀을때
+				if(window.confirm("아이디를 정말 사용하시겠어요?")){
+					//Register.html(부모창) 페이지의 id속성값이 uID인 <input>태그의 value 속성값을
+					//현재 checkID.html(자식창)의 아이디 입력<input>태그의 입력한 값으로 설정
+					opener.document.getElementById("uID").value = uID.value;
+				
+					//설정 후, 자식창인? CheckID.html 창 닫기
+					window.close();
+				}
+		}
+			
+		
+
+	}
+
+</script>
+</head>
+<body>
+	아이디
+	<input type="text" name="uID" id="uID" />
+	<input type="button" onclick="CheckID();" value="유효성확인" />
+
+</body>
+</html>

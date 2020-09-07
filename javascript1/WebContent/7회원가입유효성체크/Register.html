@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 외부 자바스크립트 소스 파일을 생성해놓고 불러와서 현재페이지에 적용시킴 -->
+<script type="text/javascript" src="CheckForm.js">
+	
+</script>
+
+</head>
+<body bgcolor="pink">
+	<form action="Register.jsp" name="MemberForm" id="MemberForm" method="post" onsubmit="return CheckForm();">
+		<table border="1" align="center">
+			<tr>
+				<td colspan="2">회원가입</td>
+			</tr>
+			<tr>
+				<td>*이름</td>
+				<td><input type="text" name="uName" id="uName" /></td>
+			</tr>
+			<tr>
+				<td>*ID</td>
+				<td>
+					<input type="text" name="uID" id="uID" readonly />
+					<input type="button" name="checkID" value="유효성확인" onclick="CheckID();"/>
+				</td>
+			</tr>
+			<tr>
+				<td>*비밀번호</td>
+				<td><input type="password" name="uPWD" id="uPWD" />
+			</tr>
+			<tr>
+				<td>*비밀번호 확인</td>
+				<td><input type="password" name="uPWD_confirm" id="uPWD_confirm" />
+			</tr>
+			<tr>
+				<td>*직업</td>
+				<td>
+					<select name="work" id="work">
+						<option selected>직업명</option>
+						<option value="기타">기타</option>
+						<option value="회사원">회사원</option>
+						<option value="학생">학생</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>*성별</td>
+				<td>
+					남자 <input type="radio" name="sex" id="s1" value="male"/>
+					여자 <input type="radio" name="sex" id="s2" value="female"/>
+				</td>
+			</tr>
+			<tr>
+				<td>*취미</td>
+				<td>
+					<input type="checkbox" name="hobby" id="h1" value="독서"/>독서
+					<input type="checkbox" name="hobby" id="h2" value="등산"/>등산
+					<input type="checkbox" name="hobby" id="h3" value="낚시"/>낚시
+				</td>
+			</tr>
+			<tr>
+				<td>*가입동기</td>
+				<td>
+					<textarea rows="20" cols="100" name="motivation"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="가입" />
+					<input type="reset" value="다시 입력 "/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
