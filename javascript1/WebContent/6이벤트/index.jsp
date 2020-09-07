@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	event_2.html페이지로부터 전송(요청)받은 서버(톰캣)가 실행하는 페이지 입니다.
+	event_2.html 페이지로부터 전송(요청)받은 서버(톰캣)가 실행하는 페이지 입니다.
 </body>
 </html>
