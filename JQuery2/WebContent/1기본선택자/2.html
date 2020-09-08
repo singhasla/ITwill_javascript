@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		jQuery 기본선택자 종류 중에서..
+		* 	<-- 모든 요소 선택자 : HTML DOM을 탐색하여 모든 요소를 선택해서 새로운 배열에 담아 가져올 수 있다.
+	 -->
+	
+	<!-- JQuery 사용을 위한 CDN링크주소 작성 : JQUERY 설치 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	
+	<script type="text/javascript">
+	
+		//웹브라우저가 2.html의 HTML코드를 모두 로딩했을때
+		//이벤트 핸들러(이벤트처리)함수인? function(){}이 실행되게 선언
+		$(document).ready(function(){		
+			
+			// 모든 요소 선택자 *를 이용해 모든 HTML요소를 선택해 옴
+			// css()메소드를 호출하여 모든 요소의 글자색을 red로 설정해보기
+			$("*").css("color","red");
+			
+			var v = $("*");	// $("선택자 종류");
+			
+			console.log(v); // f12를 눌러서 console탭에서 확인
+		});		
+	
+	</script>
+</head>
+<body>
+	<div>DIV</div>
+	<span>SPAN</span>
+	<p>P<button>BUTTON</button>
+</body>
+</html>
