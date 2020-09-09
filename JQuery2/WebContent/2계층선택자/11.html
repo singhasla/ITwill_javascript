@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		jQuery 계층선택자 종류 중에서..
+		$("prev ~ siblings") <-- 다중 형제 선택자 : prev요소 바로 다음에 나오는 
+													모든 형제(siblings)요소를 선택해 옴
+																	
+	-->
+	
+	<!-- 
+		예제 주제 : id속성값이 "prev"인 태그 다음에 나오는 모든 형제 태그를 선택해 border속성값으로 스타일적용
+	 -->
+
+	<!-- JQuery 사용을 위한 CDN링크주소 작성 : JQUERY 설치 -->
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			// id속성값이 prev인 <span>태그 다음에 나오는 형제 태그들 중에서
+			// <div>요소만 선택해서 가져와서 border속성의 값을 설정하자
+			// <div id="small">중첩div아이템</div>와
+			// <span>span 아이템2</span>는 형제태그가 아니기 때문에 선택되지 않음
+			$("#prev ~ div").css("border","3px groove blue");
+		});
+	
+	</script>
+	
+	<style>
+		div, span{
+			width: 		80px;
+			height: 	80px;
+			background: #bfa;
+			margin: 	5px;
+			float:		left;
+			font-size: 	14px;
+			display: 	block;	/* none : 안보이게 / block : 보이게 */
+		}
+		
+		div#small{
+			width: 		60px;
+			height:		25px;
+			font-size:	12px;
+			background:	#fad;
+		}
+	</style>
+</head>
+<body>
+	<div>div 아이템1</div>
+	<span id="prev">span 아이템1</span>
+	<div>div 아이템2</div>
+	<div>div 아이템3	<div id="small">중첩div아이템</div>		</div>
+	<span>span 아이템2</span>
+	<div>div 아이템4</div>
+</body>
+</html>

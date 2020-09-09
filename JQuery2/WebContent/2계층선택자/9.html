@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		jQuery 계층선택자 종류 중에서..
+		$("조상요소 모든 후손요소") <-- 자손요소 선택자 : 	조상 요소의 모든 후손요소를 선택해서 반환
+	-->
+
+	<!-- JQuery 사용을 위한 CDN링크주소 작성 : JQUERY 설치 -->
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//<form>요소의 자손 중에서 <input>요소를 선택해서 가져와서 border속성값 설정
+			$("form input").css("border", "2px dotted blue");
+			
+			//<form>요소의 자손 중에서 <fieldset>요소를 선택하고,
+			//<fieldset>요소(조상요소)를 기준으로 자손 중에서 <input>요소를 최종선택해서
+			//backgroud-color속성값을 설정
+			$("form fieldset input").css("background-color","yellow");
+		});
+	
+	</script>
+</head>
+<body>
+	<form>
+		<div>기본 form</div>
+		<label>기본 form요소의 자식</label>
+		<input name="name" id="name" />
+		<fieldset>
+			<label>기본 form요소의 자손, 필드셋 요소의 자식</label>
+			<input name="newsletter" id="newsletter" />
+		</fieldset>
+	</form>
+	
+	기본 form요소의 형제 요소 : <input name="none" />
+</body>
+</html>

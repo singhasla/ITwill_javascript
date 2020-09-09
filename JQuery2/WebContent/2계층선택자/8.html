@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		jQuery 계층선택자 종류 중에서..
+		$("parent  > child")	<-- 자식요소 선택자 : HTML DOM을 탐색하여 부모(parent)요소의 모든 자식(child)요소를 선택
+	-->
+
+	<!-- JQuery 사용을 위한 CDN링크주소 작성 : JQUERY 설치 -->
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//class속성값이 topnav인 <ul>요소의 모든 자식요소를 선택하여 border속성의 값을 설정
+			$(".topnav > li").css("border","3px double red");
+			
+			$(".topnav > li > ul > li").css("border","1px solid blue");
+			
+			//콘솔창에 자식요소<li>의 개수를 출력
+			//중첩된 <li>요소는 자손요소 이므로 선택되지 않는다.
+			console.log($(".topnav > li").length);
+		});
+	
+	</script>
+</head>
+<body>
+	<ul class="topnav">
+		<li>아이템1</li>
+		<li>아이템2
+			<ul>
+				<li>중첩된 아이템1</li>
+				<li>중첩된 아이템2</li>
+				<li>중첩된 아이템3</li>
+			</ul>
+		</li>
+		<li>아이템3</li>
+	</ul>
+</body>
+</html>
