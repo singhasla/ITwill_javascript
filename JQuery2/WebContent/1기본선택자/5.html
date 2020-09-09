@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		jQuery 기본선택자 종류 중에서..
+		$(".class속성의 값") <-- class속성 선택자 : 지정된 class속성의 값과 일치하는 요소만 배열에 담아 가져온다.
+													id선택자와 다르게 class선택자는 동일한 속성값을 여러 HTML태그에 중복해서 사용할 수 있다.
+													또한, 모든 태그에는 기본적으로 하나 이상의 class속성값을 가질 수 있으며,
+													그 중에서 하나만 일치하면 선택해 올 수 있다.
+													// == 자바스크립트 : document.getElementsByClassName();																			
+	-->
+
+	<!-- JQuery 사용을 위한 CDN링크주소 작성 : JQUERY 설치 -->
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//class속성값이 .myClass인 요소만 선택해서 배열에 담아 가져옴
+			//가져온 <div>요소와 <span>요소의 텍스트노드의 색상을 aqua로 설정
+			$(".myClass").css("color","aqua");
+			
+			
+			
+			/*  참고
+			 제이쿼리에서 필터링관련 메소드?
+			 일차적으로 선택자에 의해 선택된 결과 태그들 중에서
+			 다시 추가적으로 필터링 작업을 할 때 사용하는 메솓,
+				 .first() : 첫번째 HTML요소를 반환			
+				 .last() : 마지막 HTML요소를 반환 
+			*/
+			
+			// class="myClass"인 태그들을 선택하여 그 중에서.. 첫번째 태그만? 최종 선택해서
+			// 텍스트 노드값을 얻어 크롬 console탭에 출력
+			console.log("첫번째 <div>요소의 텍스트 값을 얻어 출력 : " 
+					+ $(".myClass").first().text());
+			// class="myClass"인 태그들을 선택하여 그 중에서.. 마지막 태그만? 최종 선택해서
+			// 텍스트 노드값을 얻어 크롬 console탭에 출력
+			console.log("마지막 <span>요소의 텍스트 값을 얻어 출력 : " 
+					+ $(".myClass").last().text());
+		});
+	
+	</script>
+</head>
+<body>
+	<div class="notMe">div class="notMe"</div>
+	<div class="myClass">div class="myClass"</div>
+	<span class="myClass">span class="myClass"</span>
+</body>
+</html>

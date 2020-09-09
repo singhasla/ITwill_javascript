@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		jQuery 기본선택자 종류 중에서..
+		$(" tag명1 , #id속성값 , .class속성값 ") <-- 다중 선택자 : 	한꺼번에 여러 개의 html태그를, 다중선택자를 이용해서 모두 선택해올 수 있다.
+																	이때 각 요소는 반드시 tag명이 아니어도 상관없으며,
+																	앞에서 배운 class속성 및 id속성도 사용 가능하다.
+																																			
+	-->
+
+	<!-- JQuery 사용을 위한 CDN링크주소 작성 : JQUERY 설치 -->
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//<div>요소와 <span>요소 그리고 class속성값이 myClass인 <p>요소를 선택해서 가져와서
+			//텍스트 노드의 값을 red로 변경
+			$("div, span, p.myClass").css("color", "blue");
+			
+			//참고 <p class="notMyClass"></p> 요소는 선택에서 제외되어 css스타일이 적용되지 않음
+		});
+	
+	</script>
+</head>
+<body>
+	<div>div</div>
+	<p class="myClass">p class = "myClass"</p>
+	<p class="notMyClass">p class = "notMyClass"</p>
+	<span>span</span>
+</body>
+</html>

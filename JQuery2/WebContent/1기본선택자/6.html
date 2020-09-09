@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 
+		예제 주제	: 하나의 HTML태그에 여러 class속성값을 가진 태그들을 선택해 오는 방법
+		참고		: 모든 태그는 하나 이상의 class속성값을 가질 수 있고,
+					  선택할 때는 그 중에서 하나만 일치하면 선택된다.
+	 -->
+	
+	<!-- JQuery 사용을 위한 CDN링크주소 작성 : JQUERY 설치 -->
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+	
+		//HTML문서 내의 모든 요소가 웹브라우저 로드되면
+		$(function() {
+			//class속성값이 "myClass"인 모든 요소들을 선택해서 가져와서
+			//css()함수를 이용해서 border속성값을 설정하면 요소들의 영역에 모두 테두리 모양으로 설정
+			$(".myClass").css("border","2px solid blue");
+			
+			//class속성값이 "myClass"와 "otherClass"인 모든 요소를 선택해서 가져와
+			//선택한 모든 요소에 color 속성값을 설정하면 텍스트노드값의 색상 변경을 할 수 있다.
+			$(".myClass.otherClass").css("color","red");
+			
+		});
+	
+	</script>
+</head>
+<body>
+	<div class="myClass">div class="notMe"</div>
+	<div class="myClass otherClass">div class="myClass"</div>
+	<span class="myClass otherClass">span class="myClass"</span>
+</body>
+</html>
