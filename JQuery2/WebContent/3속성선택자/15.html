@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--
+		jQuery 속성선택자 종류 중에서..
+		-	Attribute Contains 선택자	: 지정된 속성의 값이 정확하게 일치하지 않지만 지정된 값을 포함하는 요소를 선택하는 선택자,
+										  공백으로 정확하게 구분된 속성값을 갖는 요소를 선택하는 선택자
+								  		
+		$("selector[속성명 *= 'value']")	<-- 지정된 속성값(value) 일부를 포함하는 요소 선택
+		
+		$("selector[속성명 ~= 'value']")	<-- 공백으로 정확하게 구분된 속성값(value)을 갖는 요소 선택
+		
+	-->
+	
+	
+	<!-- 	예제 주제 : input태그의 name속성값과 저오학하게 일치하지는 않지만 "man"이 포함된 요소를 선택해서
+						"man"글자 포함이라는 문자열을 <input>요소에 설정하고,
+						공백으로 정확하게 구분된 요소를 선택해서 border스타일을 적용하는 예제
+	-->
+	
+	
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//<input>태그 중에서 name속성의 값이 문자열"man"이 포함된 요소를 선택
+			//따라서, <input name="newmilk"/>태그를 제외한 나머지 태그가 선택된다.
+			//선택한 <input>태그들의 value속성값들을 "man 글자포함"으로 설정함
+			$("input[name *= 'man']").val("man 글자포함");
+			
+			//<input>태그 중에서 name속성의 값에 ~ 공백 구분자를 가진 문자열 "man"이 포함된 요소를 선택
+			$("input[name ~= 'man']").css("border", "3px solid red");
+		})
+	
+	</script>
+</head>
+<body>
+
+	<input name="man-news"/>
+	<input name="milk man"/>
+	<input name="letterman2"/>
+	<input name="newmilk"/>
+	<input name="superman"/>
+	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--
+		jQuery 속성선택자 종류 중에서..
+		-	Attribute Equals 	: HTML DOM태그 중에서 속성이름과 속성값을 이용해서 원하는 요소를 선택할 수 있다.
+								  속성이름과 속성값을 같이 지정하는 경우에는 
+								  "[속성명='값']" 또는 "[속성명!='값']" 표현식을 사용한다.
+		
+		$("selector[attr = 'value'")	<-- HTML DOM을 구성하는 모든 html태그에서 
+											지정된 attr속성 이름을 갖는 태그요소를 선택해서 반환
+		=> HTML 요소중에서 속성이름(attr)이 지정된 value와 
+			일치하는 요소를 선택하는 경우		 '=' 연산자를 사용
+			일치하지 않는 요소를 선택하는 경우	'!=' 연산자를 사용
+	-->
+	
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+</head>
+<body>
+	<a href="http://naver.com">one</a> <br>
+	<a href="https://naver.com" target="_blank">two</a> <br>
+	<a href="https://daum.net">three</a> <br>
+	<a href="http://daum.net" target="_blank">four</a> <br>
+	<a href="https://korea.com">five</a> <br>
+	<a href="https://korea.com" target="_blank">six</a> <br>
+	
+	<script type="text/javascript">
+	
+	// <a>요소에서 href속성값이 https://naver.com과 정확하게 일치하는 요소를 선택하여
+	// 글자 크기를 40px로 설정
+	$("a[href = 'https://naver.com']").css("font-size","40px");
+	
+	// <a>요소에서 href속성값이 https://naver.com과 일치하지 안는 요소를 선택하여
+	// 글자 크기를 40px로 설정
+	$("a[href != 'https://naver.com']").css("color","red");
+	</script>
+</body>
+</html>

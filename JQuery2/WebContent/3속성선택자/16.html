@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--
+		jQuery 속성선택자 종류 중에서..
+		-	Multiple Attribute / Attribute Contains Prefix	
+				: 지정된 속성의 값이 정확하게 일치하지 않지만 지정된 값을 포함하는 요소를 선택하는 선택자,
+										  공백으로 정확하게 구분된 속성값을 갖는 요소를 선택하는 선택자
+								  		
+		$("selector[속성명1 = 'value1'][속성명2 = 'value2']")	<-- 한꺼번에 속성을 여러개 지정하는 방법.
+																	[속성명 = 값] 형식을 반복적으로 나열해서 선택.
+																	
+		$("selector[속성명 |= 'value']")	<-- 속성값에 하이픈(-)이 포함된 요소를 선택하기 위해서는
+												 공백으로 정확하게 정확하게 구분된 요소를 선택하기 위해서는 '|'
+		
+	-->
+	
+	
+	<!-- 	예제 주제 : HTML문서에서 사용된 <input>태그의 id속성을 가지며 
+						또한 name속성값이 "man"으로 끝나는 요소를 선택해서
+						<input>태그의 value속성값을 "man 글자포함"으로 설정함.
+						그리고 value속성의 값에 'en' 또는 'en-'을 포함하는 요소를 선택해서 border스타일 적용
+	-->
+		
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//input태그중에서 id속성을 가지고 있으며, name속성의 값이 "man"문자열로 끝나는 요소를 선택하고
+			//선택된 input태그의 value속성값을 "Has man in it"문자열로 설정한다.
+			$("input[id][name $= 'man']").val("Has man in it");
+		
+			//input태그에서 value속성의 값에 문자열 "en" 또는 "en-"이 포함된 요소를 선택해서
+			//빨간 점선을 3px 굵기로 그어 설정
+			$("input[value |= 'en']").css("border", "3px dotted red");
+		});
+	
+	</script>
+	
+</head>
+<body>
+	<input name="man-news" id="man-new" value="en"/>
+	<input name="milkman" value="kr"/>
+	<input name="new-letterman" id="letterman"/>
+	<input id="newmilk" value="en-UK"/>
+</body>
+</html>
