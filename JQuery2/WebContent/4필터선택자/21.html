@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--
+		jQuery 필터선택자 종류 중에서..
+		-	:gt(index위치값)	
+				: 지정한 index위치값보다 큰 index위치에 해당하는 요소들을 가져옴
+		
+		-	:lt(index위치값)	
+				: 지정한 index위치값보다 작은 index위치에 해당하는 요소들을 가져옴
+				  			  		
+		참고 : 두 선택자 모두 음수 값 지정이 가능하고 음수값은 마지막 요소부터 (-1) 카운트 된다.
+	-->
+	
+		
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//<td>태그 중에서 index위치값이 4보다 큰 위치에 있는 요소들을 선택
+			$("td:gt(4)").css("background-color", "yellow");
+			
+			////<td>태그 중에서 index위치값이 -2보다 큰 위치에 있는 요소들을 선택
+			$("td:gt(-2)").text("Hello");
+		});
+	
+	</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>TD #0</td>	<td>TD #1</td>	<td>TD #2</td>
+		</tr>
+		<tr>
+			<td>TD #3</td>	<td>TD #4</td>	<td>TD #5</td>
+		</tr>
+		<tr>	
+			<td>TD #6</td>	<td>TD #7</td>	<td>TD #8</td>
+		</tr>
+	</table>
+</body>
+</html>

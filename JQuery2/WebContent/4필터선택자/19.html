@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--
+		jQuery 필터선택자 종류 중에서..
+		-	:even	
+				: 인덱스 위치의 값이 짝수번째 요소들을 선택하는 필터 선택자
+		-	:odd	
+				: 인덱스 위치의 값이 홀수번째 요소들을 선택하는 필터 선택자 		
+	-->
+	
+	<!-- 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//<tr>태그를 모두 선택해서 <tr>요소들 중에서 짝수번째 위치한 요소만 선택해온다
+			$("tr:even").css("background-color","#bbf");
+			//<tr>태그를 모두 선택해서 <tr>요소들 중에서 홀수번째 위치한 요소만 선택해온다
+			$("tr:odd").css("font-size","25px");
+		
+		});
+	
+	</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>인덱스 0</td>
+		</tr>
+		<tr>
+			<td>인덱스 1</td>
+		</tr>
+		<tr>	
+			<td>인덱스 2</td>
+		</tr>
+		<tr>	
+			<td>인덱스 3</td>
+		</tr>
+	</table>
+</body>
+</html>
