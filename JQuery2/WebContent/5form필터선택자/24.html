@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- 
+		 JQUERY 설치 방법1을 사용하자
+		1. 
+		2. 제이쿼리 사이트로 가서 .js 파일을 불러와 현재 HTML페이지에 로딩시켜 사용
+	-->
+	<script src="jquery-3.5.1.min.js"></script>
+	<script type="text/javascript">
+	
+	$(function() {
+		// form요소 내부에서 사용되는 필터선택자란?
+		// <form>요소 내부에 사용될 요소(text, textarea, button, radio, checkbox 등)
+		// 을 선택할 때 적합한 선택자
+		
+		/*  
+			:button 필터선택자
+			 - <input>태그 중에서 type속성값이 button이거나 <button>태그를 선택해 올수있다.
+			 따라서 $(":button")은 $("button, input[type='button']")와 표현식이 같다
+		*/
+		// <button>태그와 <input>태그중에서 type속성의 값이 button인 모든 요소를 선택해 옴
+		$(":button").css("border","3px solid red");
+		
+		
+		
+		/*
+			 :enabled 필터선택자
+			 	-활성화 된 요소를 선택
+			 	
+			 :disabled 필터선택자
+			 	-비활성화 된 요소를 선택
+		*/
+		// id속성값이 disable인 <button>요소를 선택해서 클릭이벤트를 등록하여
+		$("#disable").click(function() {
+			
+			//type속성값이 text인 활성화된 요소를 선택하여 가져와서
+			//enabled속성을 제거한다.
+			$("input[type='text']:enabled").removeAttr("enabled");
+			//type속성값이 text인 활성화된 요소를 선택하여 가져와서
+			//disabled속성을 추가한다.
+			$("input[type='text']:enabled").attr("disabled","disabled");
+		});
+		
+		//id속성값이 enable인 버튼을 선택하여 클릭이벤트를 등록하자 
+		$("#enable").click(function() {
+			
+			//type속성값이 text인 비활성화된 요소를 선택하여 가져와서
+			//disabled속성을 제거한다.
+			$("input[type='text']:disabled").removeAttr("disabled");
+			//type속성값이 text인 비활성화된 요소를 선택하여 가져와서
+			//enabled속성을 추가한다.
+			$("input[type='text']:disabled").attr("enabled","enabled");
+		});
+		
+		//<button id="disable">인 버튼을 클릭했을때(전송버튼을 클릭했을때),
+		//(form요소의 action속성의 페이지로 전송이 일어났을때...)
+		$("form").submit(function(event) {
+			//실제 submit하는 동작을 차단시키자
+			event.preventDefault();		//return false;
+		});
+		
+	});
+	
+	</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<input type="text" id="first"/>
+			<input type="text" id="second" disabled="disabled"/>	<!-- 비활성화 -->
+			<input type="button" value="enable" id="enable"/>		<!-- 활성화 -->
+			<button id="disable">disable</button>
+		</fieldset>
+	</form>
+</body>
+</html>

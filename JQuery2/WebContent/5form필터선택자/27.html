@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--
+		* 내용 필터선택자란? *
+						-> 특정 요소의 내용과 일치하는요소 또는 일치하지 않는 요소를 선택하는 선택자
+					
+						
+		내용 필터선택자 종류 중에서..
+		:contains(text)	-> 	지정된 text와 일치하는 문자열이 존재하는 요소를 선택한다. 대소문자 구별함
+		 
+		:empty			->	자식 요소가 존재하지 않고 텍스트 값이 비어 있는 요소를 선택한다.
+		
+		:has(selector)	-> 	지정된 selector가 자식요소로 존재하는 모든 요소를 선택한다.
+		
+		:parent			->	자식요소가 존재하거나, 텍스트값을 가지고 있는 요소를 선택한다.
+	-->
+	
+	<!-- JQUERY 설치 방법1을 사용하자	-->
+	<script src="jquery-3.5.1.min.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//<div>태그의 내용 중에 "John"문자열을 포함하는 태그를 선택하여
+			//텍스트 글자에 underline 설정
+			$("div:contains('John')").css("text-decoration", "underline");
+		});
+	
+	</script>
+</head>
+<body>
+	<div>John Resig</div>
+	<div>George Martin , john</div>
+	<div>Malcom John Sinclair</div>
+	<div>J. Ohn</div>
+	<div><span>Mr. John</span></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--
+		form 필터선택자 종류 중에서..
+		-	:selected 필터선택자	
+				: 이 선택자는 <select>태그의 하위 태그로 사용하는 <option>태그 중에서 선택된 요소를 반환
+					<input>태그의 type속성값이 checkbox이거나 radio인 경우는 동작하지 않고,
+					오직 <select>태그에서만 동작하기 때문에 주의해야함.
+	-->
+	
+	
+	<!--  
+			주제 : <select>태그 내부에서 선택한 <option>의 텍스트값을 얻어 출력 
+	-->
+
+	<!-- JQUERY 설치 방법1을 사용하자	-->
+	<script src="jquery-3.5.1.min.js"></script>
+	<script type="text/javascript">
+	
+		$(function() {
+			//<select>태그를 선택해서 change이벤트를 등록한다.
+			//풀이 : 이후 <select>태그의 하위 항목인 <option>태그를 선택하면~
+			$("select").change(function() {
+				
+				//선택된 <option>요소의 텍스트 노드값을 얻어 저장
+				var data = $("option:selected").text();	// 010값
+				
+				//data변수에 저장된 값을 <span>요소의 텍스트 위치에 설정
+				$("span").text(data);
+			});
+		});
+	
+	</script>
+</head>
+<body>
+	<form name="phone">
+		<select>
+			<option>010</option>
+			<option selected="selected">011</option>
+			<option>02</option>
+		</select>
+	</form>
+	선택된 값 : <span></span>
+</body>
+</html>
