@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+	<!--
+	
+		jQuery 속성관련 메소드 중에서..
+		-	.removeAttr(속성명) 메소드		: 	지정된 속성명과 일치하는 모든 속성을 제거한다.
+		
+	-->
+	<!-- 	
+ 		예제 주제 : [전체해제] 버튼을 클릭할 때 선택되어 있던 모든 checkbox의 체크를 해제하고,
+ 					반대로 [전체선택] 버튼을 클릭하면 해제되어 있던 모든 checkbox에 체크가 되도록 하는 예제. 
+ 	-->
+	
+	<script>
+
+		$(function() {
+			//id속성값이 allunCheck인? <button>요소를 선택하여 <button>요소에 클릭이벤트를 등록
+					//$("#allunCheck").on("등록할 이벤트명(띄어쓰기 구분으로 여러개 가능)", 이벤트가 발생하면 처리할 함수);
+					$("#allunCheck").on("click", function() {
+						$("input").removeAttr("checked");
+					});
+					
+					$("#allCheck").on("click", function() {
+						$("input").attr("checked","checked");
+					});
+					
+		})
+
+	</script>
+</head>
+<body>
+	<button id="allunCheck">전체해제</button>
+	<button id="allCheck">전체선택</button> <br>
+	사과 <input type="checkbox" name="apple" checked="checked"> <br>
+	바나나 <input type="checkbox" name="banana" checked="checked"> <br>
+	오렌지 <input type="checkbox" name="orange" checked="checked"> <br>
+</body>
+</html>

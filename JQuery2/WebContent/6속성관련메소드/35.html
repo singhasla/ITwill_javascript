@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+	<!--
+	
+		jQuery 속성관련 메소드 중에서..
+		-	.toggleClass(className) 메소드	:  선택된 요소에서 className에 해당하는 class속성이 존재하면 제거하고, 
+											  존재하지 않으면 추가로 설정하는 메소드
+											  
+		//참고 : 결국 addClass(className)메소드와 removeClass(className)메소드를 번갈아가면서 실행하는 메소드이다.
+		
+	-->	
+	
+	<!-- 	
+ 		예제 주제 : 
+ 	-->
+ 	
+	<script>
+		
+		$(function() {
+			$("p").on("click",function(){
+				//클릭이벤트가 발생한 <p>요소	<-- this
+				$(this).toggleClass("highlight");	//클릭할 때마다 <p>태그에 highlight class속성의 값으로 추가/제거 됨 
+			});
+		});
+
+	</script>
+	
+	<style type="text/css">
+		.highlight{
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<p>홍길동</p>
+	<p>이순신</p>
+	<p>유관순</p>
+</body>
+</html>

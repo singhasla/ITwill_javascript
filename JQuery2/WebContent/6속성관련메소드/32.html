@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+	<!--
+	
+		jQuery 속성관련 메소드 중에서..
+		-	.text() 메소드			: 선택된 요소의 자손을포함한 text값을 반환 
+
+		-	.text(속성값) 메소드	: 자손 요소에 html태그가 포함되면 모두 제거한 후 문자열만 반환됨
+										단, .text()메소드는 <input>태그 또는 <script>내에서 사용할 수 없다.
+		
+		//참고 : <input> 또는 <textarea>의 값을 얻거나 설정하기 위해서는 .val()메소드를 사용해야 하고,
+				 html태그를 포함한 텍스트 값을 얻을때는 .html()메소드를 사용해야 한다.
+				 
+	-->	
+	
+	<!-- 	
+ 		예제 주제 : html태그가 포함된 <p>태그 내부의? text값을 얻어서 다른 <p>태그의 text노드 위치에 text값을 설정하는 예제.
+ 					이때 포함된 HTML태그는 모두 제거되고 text값(문자열)만 설정됨
+ 	-->
+	<script>
+
+		$(function() {
+			//<p>요소들을 모두 배열에 담아 선택해서 가져와서
+			//<p>요소들 중에서 첫번째 <p>요소만 최종 선택해서 가져와 텍스트 노드의 값을 얻어 str변수에 저장
+			var str = $("p:first").html();	//<b>홍</b>길동
+			var str = $("p:first").text();	//홍길동
+			
+			
+			//str변수에 저장된 값을 마지막 <p>요소의 텍스트 노드 위치에 설정
+			$("p:last").text(str);
+			
+		});
+
+	</script>
+</head>
+<body>
+	<p><b>홍</b>길동</p>
+	<p></p>
+</body>
+</html>
