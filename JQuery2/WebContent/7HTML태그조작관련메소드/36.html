@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+	<script>
+		
+		$(function() {
+			/* 			
+			//클래스 속성값이 inner인 <div>요소를 선택해서 가져와서
+			//text값 위치에 "<span>장군</span>"태그를 만들어서 추가한다.
+			$(".inner").append("<span>장군</span>");
+			
+			//클래스 속성값이 inner인 <div>요소의 텍스트값 위치에 <h2>영웅들</h2>요소를 얻어 추가한다.
+			//기존의 <h2>요소는 이동된다.
+			$(".inner").append($("h2"));
+			
+			//클래스 속성값이 inner인 <div>요소의 텍스트값 위치에 <span>장군</span>요소를 만들어 추가한다.
+			$("<span>장군</span>").appendTo(".inner");
+			
+			//------------------------------------------------------------------------------------------
+			
+			//클래스 속성값이 inner인 <div>요소의 텍스트값 위치에 <span>장군</span>요소를 추가한다.
+			//단! 기존에 존재한 이순신 또는 강감찬 텍스트 위치 앞에 추가시킨다.
+			$(".inner").prepend("<span>장군</span>");
+			
+			//클래스 속성값이 inner인 <div>요소의 텍스트값 위치에 <span>장군</span>요소를 추가한다.
+			//36.html파일에 존재하는 <h2>태그를 이동시켜 설정한다.
+			//이때 기존<h2>태그가 타깃태그의 text값 앞으로 이동된다.
+			$(".inner").prepend($("h2"));
+			
+			//------------------------------------------------------------------------------------------
+			
+			// .after(content)메소드	:  선택된 태그요소 뒤에? content를 추가한다.
+			//								추가하려는 content가 HTML문서 내에 있는 경우
+			//								추가하려는 content가 대상 태그로 이동하게 된다.
+			  
+				<!-- 	
+		 			예제 주제1 : content가 HTML문서 내에 없는 경우로서
+		 						class속성값이 inner인 <div>태그의 바로 뒤에 
+		 						"<span>장군</span>"을 생성하여 추가시킨다.
+		 		-->
+		 		$(".inner").after("<span>장군</span>");
+		 		
+				<!-- 	
+	 				예제 주제2 : content가 HTML문서 내에 있는 경우로서
+	 							class속성값이 inner인 <div>태그의 바로 뒤에 
+	 							HTML내에 존재하는 <h2>태그를 선택하여 추가시킨다.
+	 			-->
+	 			$(".inner").after($("h2"));
+	 			
+	 		//------------------------------------------------------------------------------------------ 
+	 		*/
+				
+	 		// .wrap(html)메소드	:  선택된 태그를 지정된 html태그로 에워 감싼다.
+			//							지정된 html태그는 새로운 태그일 수도 있고, html문서 내에 존재하는 태그일 수도 있다.
+			//							기존의 html태그는 이동되지 않고 복사된다.
+			//							그리고 지정된 html태그에 text값이 포함된 경우 text값은 타깃요소 앞에 위치한다.
+				  
+					<!-- 	
+			 			예제 주제 : class속성값이 inner인 <div>태그를 찾아서 
+			 						새로운 태그인 <div class='new'></div>태그를 생성해서 에워 감싼다.
+			 		-->
+			 		$(".inner").wrap("<div class='new'</div>");
+			 		
+		 			
+	 			
+		});
+
+	</script>
+	
+	<style>
+		.new{
+			border: 5px solid skyblue;
+		}
+	</style>
+	
+</head>
+<body>
+	<h2>영웅들</h2>
+	<div class="container">
+		<div class="inner">이순신</div>
+		<div class="inner">강감찬</div>
+	</div>
+</body>
+</html>
