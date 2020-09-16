@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+		<!-- 
+				- fadeOut() 메소드	:  노출되어 있던 요소가 점점 투명해지면서 숨겨지게 하는 메소드
+				
+		//--------------------------------------------------------------------------------------------------------------
+		
+				- fadeIn() 메소드	:  숨겨져 있던 요소가 점점 선명해지면서 노출되는 메소드
+				
+		//--------------------------------------------------------------------------------------------------------------
+		
+				- fadeToggle() 메소드 :  점점 투명, 점점 노출
+				
+		//--------------------------------------------------------------------------------------------------------------
+		
+				- fadeTo() 메소드 :  노출되어 있던 요소에 투명도를 지정한만큼 숨김.
+									투명도는 0부터 1사이의 값을 입력할 수 있으며,
+									숫자가 1에 가까울수록 선명하게 보인다.		
+					
+		-->
+						
+	<script>
+
+		$(function() {
+			
+	 		$("#btn1").on("click",function() {	// == $("#btn1").click(function() {
+	 			$("h1").fadeOut("fast",function(){ alert("fadeOut 완료!"); });
+	 		});
+	 		
+	 		$("#btn2").on("click",function() {	// == $("#btn2").click(function() {
+	 			$("h1").fadeIn(3000,function(){ alert("fadeIn 완료!"); });
+	 		});
+	 		
+	 		$("#btn3").on("click",function() {	// == $("#btn3").click(function() {
+	 			$("h1").fadeToggle("slow");
+	 		});
+
+	 		$("#btn4").click(function() {
+				$("h1").fadeTo("fast",0.3);
+			});
+	 		
+	 		$("#btn5").click(function() {
+				$("h1").fadeTo("slow",1);
+			});
+		});
+		
+	</script>
+</head>
+<body>
+	<button id="btn1">fadeOut</button>
+	<button id="btn2">fadeIn</button>
+	<button id="btn3">fadeToggle</button>
+	<button id="btn4">투명도(30%)</button>
+	<button id="btn5">투명도(100%)</button>
+	<h1>내용</h1>
+</body>
+</html>
+
