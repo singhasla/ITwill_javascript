@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+		<!-- 
+			* 유틸리티관련 메소드란? *
+					-> jQuery를 이용하여 코드를 작성할 때 
+						배열을 순회하거나, 배열을 필터링하거나 또는 배열 형식으로 변경하거나,
+						배열 복제, 데이터의 공백 제거, .xml파일 및 .json파일의 파싱처리 방법과 같은
+						프로그램을 개발할 때 효율적으로 사용 가능한 유틸리티 메소드를 말함.
+					
+			* jQuery에서 제공하는 유틸리티 관련 메소드 종류
+				1. jQuery.each()(object, function) 메소드	:
+						배열 및 Map형태의 반복되는 데이터를 순회하면서 데이터를 얻어 올 수 있다.
+						function내에서 false를 반환하여 반복순회를 중지한다.						
+		-->
+						
+	<script>
+
+		$(function() {
+			
+			/* 	
+	 			예제 주제 : 5개의 문자열이 저장된 배열과 5개의 key / value형식으로 저장된 json객체 데이터를 
+	 						jQuery.each()메소드를 사용하여 순회하면서 데이터를 얻어 콘솔에 출력하는 예제.
+	 		*/
+	 		
+	 		//5개의 문자열 데이터를 가진 배열을 생성한다.
+	 		var arr = ["one","two","three","four","five"];
+			//			 0	   1      2      3   	4
+			
+			//배열을 순회하면서 데이터를 얻어 출력하기 위하여 jQuery.each()메소드를 사용함.
+			//첫번째 인자에는 배열을 지정하고,
+			//두번째 인자에는 함수 function를 지정한다.
+			//function의 첫번째 인자인 idx는 배열의 index값으로 0부터 전달을 받고,
+			//function의 두번째 인자인 obj는 index위치값에 해당하는 실제 데이터를 전달 받는다.
+			jQuery.each(arr, function(idx,obj){
+				
+				console.log("index: " + idx + "\t value: " + obj);
+				
+			});
+			
+			// .json 파일에서 객체를 생성할 때 {	속성명(key):속성값(value), 		속성명(key):속성값(value)	}
+			var m = { one:1 , two:2 , three:3 , four:4 , five:5 }
+			
+			//첫번째 인자에는 JSON객체인 m을 지정하고,
+			//두번째 인자에는 function함수를 지정한다.
+			//function함수의 첫번째 인자인 key는 m객체의 key값을 전달받고,
+			//function함수의 두번째 인자인 obj는 key에 해당되는 값을 전달받는다.
+			jQuery.each(m, function(key, obj) {		//	key -> one	, 	obj -> 1
+				
+				console.log("key: " + key + "\t value: " + obj);
+				
+			})
+
+		});
+		
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+		<!-- 
+			* jQuery에서 제공하는 유틸리티 관련 메소드 종류
+				3. 		.get()(인덱스위치값) 메소드	:
+							
+						
+		-->
+						
+	<script>
+
+		$(function() {
+			
+			/* 	
+	 			예제 주제 : 지정한 index위치값과 일치하는 위치의 <li>태그에 해당하는 text값을 얻어 출력
+	 						index값을 지정하지 않고 모든 <li>태그를 선택해 text값을 얻어 출력
+	 						
+	 		*/
+	 		
+	 		//<li>태그를 첫번째 <li>태그만 선택하기 위해서
+	 		//get(index)메소드를 이용하여 index 위치값 0을 지정하여
+	 		//<li>홍길동</li> 을 선택해와 "홍길동" 텍스트 값을 얻기 위해
+	 		//모든 HTML객체들의 속성인? innerHTML속성을 호출한다.
+//	 		console.log( $("li").get(0).innerHTML );
+	 		
+	 		//모든 <li>요소들을 얻기 위하여 index위치값을 전달하지 않는? get()메소드를 호출하자
+	 		var all = $("li").get();
+	 		console.log(all);
+	 		
+	 		//for문을 사용하여 각 li요소들을 얻어 li요소 내부에 있는 텍스트 값을 최종적으로 얻어 출력하자
+	 		for (var i = 0; i < all.length; i++) {
+				
+	 			console.log(all[i].innerHTML);
+				
+			}
+	 		
+
+		});
+		
+	</script>
+</head>
+<body>
+	<ul>
+		<li>홍길동</li>
+		<li>이순신</li>
+		<li>유관순</li>
+	</ul>
+</body>
+</html>
