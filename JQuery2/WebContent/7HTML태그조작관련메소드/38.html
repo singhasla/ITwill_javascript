@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+	
+	<script>
+
+		$(function() {
+			
+			/*
+				HTML태그조작관련 메소드 중에서..
+				-	.empty() 메소드	:  텍스트값을 포함한 모든 자식(자손포함)요소를 제거하고,
+										HTML태그는 그대로 남는다.
+			*/
+			
+			//class속성값이 hello인 <div>요소 선택해서 <div>요소의 text값을 포함한
+			//모든 자식 요소를 제거함
+			$(".hello").empty();
+			
+			//--------------------------------------------------------------------------------------------
+			
+			/*
+				HTML태그조작관련 메소드 중에서..
+				-	.remove(선택자를 이용해서 태그를 선택해옴) 메소드	:  선택된 모든 요소를 제거한다.
+			*/
+			
+			// 모든 <div>태그 중에서... class속성값이 hello인 모든 태그를 삭제한다.
+			$("div").remove(".hello");
+			
+		});
+		
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="hello">이순신<p>강감찬</p></div>
+		<div class="goodbye">유관순</div>
+	</div>
+</body>
+</html>

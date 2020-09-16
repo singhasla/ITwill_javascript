@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+	
+	<script>
+
+		$(function() {
+			
+			/*
+			
+				HTML태그조작관련 메소드 중에서..
+				-	.replaceWith(content) 메소드	:  선택된 태그요소를 제거하고 새로운 content로 변경한다.  
+											  			만약 HTML문서 내에 content와 일치하는 태그가 있으면
+											  			타깃태그요소로 이동하여 변경시킨다.
+			*/
+			
+			//class속성값이 second인 <div>태그를 찾아서
+			//<div class="inner second">강감찬</div>	<-- 이 태그를
+			//<h2>강감찬장군</h2>태그로 변경시키자
+			$("div.second").replaceWith("<h2>강감찬장군</h2>");
+			
+			//class속성값이 third인 <div>태그를 찾아서
+			//html문서 내에 존재하는 class속성값이 first인 <div>요소를 선택해서
+			//이 <div>태그로 변경시키자
+			$("div.third").replaceWith($("div.first"));		// == $("div.third").replaceWith($(".first"));
+
+			//--------------------------------------------------------------------------------------------
+			
+			/*
+			
+				HTML태그조작관련 메소드 중에서..
+				-	.replaceAll(target) 메소드	:  replaceAll메소드는 replaceWidth메소드와 기능이 동일함.  
+											  		다만, content와 target의 위치가 서로 다르다.										  		
+			*/
+			 
+			//class속성값이 inner인 태그들을 모두 선택해서 새로운 <h2>태그로 변경
+			$("<h2>영웅들</h2>").replaceAll(".inner");	//파라미터 위치 조심!!!
+
+			
+		});
+		
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="inner first">이순신</div>
+		<div class="inner second">강감찬</div>
+		<div class="inner third">유관순</div>
+	</div>
+</body>
+</html>
