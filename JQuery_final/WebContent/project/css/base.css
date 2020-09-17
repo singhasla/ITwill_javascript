@@ -1,0 +1,7 @@
+/* 
+@import를 이용하여 외부에 있는 'reset.css'와 
+'common.css'스타일 파일을 불러와 하나로 합쳐 놓았습니다
+ */
+@charset "utf-8";
+@import url("reset.css");
+@import url("common.css");

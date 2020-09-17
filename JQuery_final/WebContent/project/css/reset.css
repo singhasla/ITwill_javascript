@@ -1,0 +1,48 @@
+/* 
+reset.css파일은  모든 웹페이지에 반드시 설정해야 하는 초기 스타일(CSS)속성이라 보면 됨
+이파일에는 HTML태그마다 불필요한 속성과 의도하지 않은 값이 적용되어 있는 경우가 있는데,
+이런 불필요한 속성을 제거 하넉나 속성의 값을 초기화 해주는 작업을 함
+
+요약 : 모든 페이지의 스타일을 초기화하는 초기 세팅 파일  reset.css
+ */
+ 
+/*
+구글에서 나눔글꼴을 적용할 수 있도록 Google Web fonts를 제공해주고 있습니다. 
+Google Web fonts를 적용하면 PC에 해당 글꼴이 설치되지 않아도 적용이 가능합니다.
+ */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
+	form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+
+img {
+	border: none;
+	vertical-align: top;
+}
+
+fieldset {
+	border: none;
+}
+
+li {
+	list-style: none;
+}
+
+input, select, button, select {
+	vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}

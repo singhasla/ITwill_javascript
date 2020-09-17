@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<!--Google 번역기 API 사용하기위한 
+    추가1.  세계 언어 선택 메타 태그 추가-->
+<meta name="google-translate-customization"
+	content="6f1073ba568f1202-9c8990a4b3025b3e-ga74e3ea243d3f01d-14"></meta>
+<!-- 추가1.  세계 언어 선택 메타 태그 추가 colse -->
+
+
+<title>이지스퍼블리싱</title>
+<!-- 모든 페이지 공통으로 적용되는 스타일(CSS)를 불러와 하나로 합쳐 놓은 파일 -->
+<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
+
+<!-- 메인페이지(index.html)에서만 적용하는 스크립트만 포함한 파일 -->
+<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+
+<!-- 제이쿼리 사용을 위한 제이쿼리 라이이브러리 연동 -->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+<!-- 터치스위프트 플러그인 사용시 필요한 스타일(CSS)파일  -->
+<link rel="stylesheet" type="text/css" href="js/style.css" />
+
+<!-- 터치 슬라이드 플러그인 연동 -->
+<script type="text/javascript" src="js/swipe.js"></script>
+
+<!-- bxSlider 플러그인 연동 -->
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+
+<!-- UI 플러그인 연동 -->
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<!-- 쿠키 플러그인 연동 -->
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<!--Google 번역기 API 사용하기위한 추가2.-->
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({
+			pageLanguage : 'ko',
+			layout : google.translate.TranslateElement.InlineLayout.SIMPLE
+		}, 'google_translate_element');
+	}
+</script>
+
+<script type="text/javascript"
+	    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--Google 번역기 API 사용하기위한 추가2.-->
+    
+	    
+</head>
+<body>
+	<div id="wrap">
+		<dl class="hide">
+			<dt>스킵메뉴</dt>
+			<dd>
+				<a href="#container">본문바로가기</a>
+			</dd>
+		</dl>
+		
+		<!-- 헤더 영역  -->
+		<div id="header">
+			<!-- 로고이미지 들어가는 부분 -->
+			<h1>
+				<a href="#"><img src="images/logo.gif" alt="이지스 퍼블리싱" /></a>
+			</h1>
+			<!-- 로고이미지 들어가는 부분 -->
+			
+			<!-- 유틸메뉴에는 정의형 목록인 <dl>태그를 사용함 -->
+			<dl id="util_menu">
+				<dt class="hide">유틸메뉴</dt>
+				<dd class="util_first">
+					<ul>
+						<!-- 로그인 부분 전체 -->
+						<li class="login_wrap">
+							<!-- 로그인 링크 -->
+							<a href="#"> 
+								<img src="images/util_menu_1.gif" alt="로그인" />
+							</a> 
+							<!-- 로그인 링크 close -->
+							<!-- 로그인 폼 -->
+							<form action="#" method="post" name="log_f" id="login_f">
+								<fieldset>
+									<legend>로그인</legend>
+									<p class="user_id">
+										<label for="user_id"> 
+											<img src="images/login_title_id.gif" alt="아이디" />
+										</label> 
+											<input type="text" name="user_id" id="user_id" />
+									</p>
+									<p class="user_pw">
+										<label for="user_pw"> 
+											<img src="images/login_title_pw.gif" alt="아이디" />
+										</label> 
+											<input type="password" name="user_pw" id="user_pw" />
+									</p>
+									<p>
+										<input type="checkbox" name="save_id" id="save_id" /> 
+										<label for="save_id"> 비밀번호 저장</label>
+									</p>
+									<p class="log_btn">
+										<input type="image" src="images/login_btn.gif" alt="로그인버튼" />
+									</p>
+									<p class="join_btn_wrap">
+										<a href="#">회원가입</a> 
+										<a href="#" class="sch_id_btn">아이디/비밀번호찾기</a>
+									</p>
+									<p class="login_close_btn">
+										<a href="#"> 
+											<img src="images/login_close_btn.gif" alt="닫기버튼" />
+										</a>
+									</p>
+								</fieldset>
+							</form>
+						</li>
+						<!-- 로그인 부분 전체 close-->
+						
+						<!-- 회원가입 링크 -->
+						<li>
+							<a href="#"><img src="images/util_menu_2.gif"alt="회원가입" /></a>
+						</li>
+						<!-- 회원가입 링크 close-->
+						
+						<!-- 도서목록 링크 -->
+						<li>
+							<a href="#"><img src="images/util_menu_3.gif"alt="도서목록" /></a>
+						</li>
+						<!-- 도서목록 링크 close-->
+						
+						<!-- 원고지원링크 -->
+						<li>
+							<a href="#"><img src="images/util_menu_4.gif"alt="원고지원" /></a>
+						</li>
+						<!-- 원고지원링크 close-->
+						
+						<!-- 사이트맵링크 -->
+						<li>
+							<a href="#"><img src="images/util_menu_5.gif" alt="사이트맵" /></a>
+						</li>
+						<!-- 사이트맵링크 close-->
+					</ul>
+				</dd>
+				
+				<dd>
+					<ul id="zoom">
+						<!-- 화면크기 이미지 링크-->
+						<li> 
+							<img src="images/util_zoom_1.gif" alt="" />
+						</li>
+						<!-- + 이미지 링크-->
+						<li>
+							<a href="#" class="zoom_in"><img src="images/util_zoom_2.gif" alt="" /></a>
+						</li>
+						<!-- 100 이미지 링크-->
+						<li>
+							<a href="#" class="zoom_return"><img src="images/util_zoom_3.gif" alt="" /></a>
+						</li>
+						<!-- - 이미지 링크-->
+						<li>
+							<a href="#" class="zoom_out"><img src="images/util_zoom_4.gif" alt="" /></a>
+						</li>
+					</ul>
+				</dd>
+				<dd>
+					<!-- 프린트 버튼 이미지 링크 -->
+					<a href="#" class="print_btn"> 
+						<img src="images/util_print.gif" alt="" />
+					</a>
+				</dd>
+				<dd>
+					<!--Google 번역기 API 사용하기위한 추가3.-->
+					<!-- 구글 번역기 API 적용  -->
+					<div id="google_translate_element"></div>
+					<!--Google 번역기 API 사용하기위한 추가3.-->					
+				</dd>
+			</dl>
+			<!-- 검색어를 입력 하는 곳 -->
+			<form action="#" method="get" name="sch_f" id="sch_f">
+				<fieldset>
+					<legend>검색폼</legend>
+					<p>
+						<input type="text" name="keyword" id="keyword" title="검색어입력" /> 
+						<input type="image" src="images/header_sch_btn.gif" alt="검색" />
+					</p>
+				</fieldset>
+			</form>
+			<!-- 검색어를 입력 하는 곳 -->
+			
+			<!-- 상단 홈, 회사소개, 도서목록.... 메뉴가 들어가는 디자인  -->
+			<h2 class="hide">메인메뉴</h2>
+			<ul id="gnb">
+				<li>
+					<!-- 홈 이미지 링크 -->
+					<a href="#"><img src="images/gnb_1_out.gif" alt="" /></a>
+					<!-- 홈 이미지 링크 close-->
+					
+					<!-- 홈 이미지링크에 마우스 포인터를 올리면 나타날 메뉴 -->
+					<ul class="sub1">
+						<li><a href="#">홈으로이동</a></li>
+					</ul>
+					<!-- 홈 이미지링크에 마우스 포인터를 올리면 나타날 메뉴 close-->
+				</li>
+				<li>
+					<!-- 회사소개 이미지 링크 -->
+					<a href="#"><img src="images/gnb_2_out.gif" alt="" /></a>
+					<!-- 회사소개 이미지 링크 close-->
+					
+					<!-- 회사소개 이미지 링크에 마우스 포인터를 올리면 나타날 메뉴-->
+					<ul class="sub2">
+						<li><a href="#">회사소개</a></li>
+						<li><a href="#">출간분야</a></li>
+						<li><a href="#">찾아오시는 길</a></li>
+					</ul>
+					<!-- 회사소개 이미지 링크에 마우스 포인터를 올리면 나타날 메뉴 close-->
+				</li>
+					
+				<li>
+					<!-- 도서목록 이미지 링크 -->
+					<a href="#"><img src="images/gnb_3_out.gif" alt="" /></a>
+					<!-- 도서목록 이미지 링크 close-->
+					
+					<!-- 도서목록 이미지 링크에 마우스 포인터를 올리면 나타날 메뉴 -->
+					<ul class="sub3">
+						<li><a href="#">신간도서</a></li>
+						<li><a href="#">인기도서</a></li>
+						<li><a href="#">추천도서</a></li>
+					</ul>
+					<!-- 도서목록 이미지 링크에 마우스 포인터를 올리면 나타날 메뉴 close-->
+				</li>
+				
+				<li>
+					<!-- 고객 및 저자문의 이미지 링크 -->
+					<a href="#"><img src="images/gnb_4_out.gif" alt="" /></a>
+					<!-- 고객 및 저자문의 이미지 링크 close-->
+					
+					<!-- 고객 및 저자문의 이미지 링크에 마우스를 올리면 나타날 메뉴-->
+					<ul class="sub4">
+						<li><a href="#">고객문의</a></li>
+						<li><a href="#">저자문의</a></li>
+						<li><a href="#">자료요청</a></li>
+						<li><a href="#">자주묻는 질문</a></li>
+					</ul>
+					<!-- 고객 및 저자문의 이미지 링크에 마우스를 올리면 나타날 메뉴 close-->
+				</li>
+			</ul>
+			
+			<p id="total_btn">
+				<!-- 전체 메뉴 이미지 링크 -->
+				<a href="#"> <img src="images/allmenu_btn_out.gif" alt="전체메뉴" /></a>
+				<!-- 전체 메뉴 이미지 링크 close-->
+			</p>
+			
+			<!-- 전체 메뉴 이미지 링크를 클릭시 나타날 하위 메뉴들 -->
+			<div id="total_menu">
+				<dl>
+					<dt>
+						<img src="images/allmenu_title_1.gif" alt="홈" />
+					</dt>
+					<dd>
+						<ul>
+							<li><a href="#">홈으로이동</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="images/allmenu_title_2.gif" alt="홈" />
+					</dt>
+					<dd>
+						<ul>
+							<li><a href="#">회사소개</a></li>
+							<li><a href="#">출간분야</a></li>
+							<li><a href="#">찾아오시는 길</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="images/allmenu_title_1.gif" alt="홈" />
+					</dt>
+					<dd>
+						<ul>
+							<li><a href="#">신간도서</a></li>
+							<li><a href="#">인기도서</a></li>
+							<li><a href="#">추천도서</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<img src="images/allmenu_title_1.gif" alt="홈" />
+					</dt>
+					<dd>
+						<ul>
+							<li><a href="#">고객문의</a></li>
+							<li><a href="#">저자문의</a></li>
+							<li><a href="#">자료요청</a></li>
+							<li><a href="#">자주묻는 질문</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<p id="total_close">
+					<a href="#"> <img src="images/allmenu_close_btn.gif" alt="전체메뉴 닫기" /> </a>
+				</p>
+			</div>
+			<!-- 전체 메뉴 이미지 링크를 클릭시 나타날 하위 메뉴들  close -->
+			
+			<!-- 날짜를 나타낼 영역 -->
+			<p id="date_wrap">
+				<span class="year">0000</span> 년 
+				<span class="month">00</span> 월 
+				<span class="date">00</span>일
+				<span class="hour">00</span>시
+				<span class="minute">00</span>분
+				<span class="second">00</span>초
+			</p>
+			<!-- 날짜를 나타낼 영역 close -->
+		</div>
+		<!-- 헤더 영역  close -->
+		
+		
+		<hr /> 
+		
+		<!-- 비주얼 배너 영역  -->
+		<div id="visual">
+			<div id="mySwipe" class='swipe'>
+				<ul class="touch_banner swipe-wrap">
+					<!-- 배너 목록 -->
+					<li><a href="#"><img src="images/visual_img_1.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/visual_img_2.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/visual_img_3.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+				<ul class="touch_bullet">
+					<!-- 배너 위치 표시 동그라미 이미지 -->
+					<li><img src="images/visual_bullet_on.png" class="active" alt="" /></li>
+					<li><img src="images/visual_bullet_off.png" alt="" /></li>
+					<li><img src="images/visual_bullet_off.png" alt="" /></li>
+				</ul>
+			<p class="touch_left_btn">
+				<!-- < 이전 버튼 -->
+				<a href="#"> <img src="images/visual_btn_left.png" alt="이전 배너" /> </a>
+			</p>
+			<p class="touch_right_btn">
+				<!-- > 다음 버튼 -->
+				<a href="#"> <img src="images/visual_btn_right.png" alt="다음 배너" /> </a>
+			</p>
+		</div>
+		<!-- 비주얼 배너 영역 close -->
+		
+		<hr />
+		
+		<!-- 콘텐츠 영역 -->
+		<div id="container">
+		
+			<!-- contents_top -->
+			<div id="contents_top">
+				<div id="roll_banner_wrap">
+					<h3>
+						<img src="images/pop_title.gif" alt="알림판" />
+					</h3>
+					<dl>
+						<dt class="roll_btn1">
+							<a href="#" class="active"> 
+								<img src="images/pop_btn_1_over.gif" alt="버튼1" />
+							</a>
+						</dt>
+						<dd>
+							<a href="#"><img src="images/pop_banner_1.gif" alt="배너1" /></a>
+						</dd>
+						<dt class="roll_btn2">
+							<a href="#"><img src="images/pop_btn_2_out.gif" alt="버튼2" /></a>
+						</dt>
+						<dd>
+							<a href="#"><img src="images/pop_banner_2.gif" alt="배너2" /></a>
+						</dd>
+						<dt class="roll_btn3">
+							<a href="#"><img src="images/pop_btn_3_out.gif" alt="버튼3" /></a>
+						</dt>
+						<dd>
+							<a href="#"><img src="images/pop_banner_3.gif" alt="배너3" /></a>
+						</dd>
+						<dt class="roll_btn4">
+							<a href="#"><img src="images/pop_btn_4_out.gif" alt="버튼4" /></a>
+						</dt>
+						<dd>
+							<a href="#"><img src="images/pop_banner_4.gif" alt="배너4" /></a>
+						</dd>
+					</dl>
+					<p class="ctl_btn">
+						<a href="#" class="playBtn"> 
+							<img src="images/pop_btn_play_on.gif" alt="재생버튼" />
+						</a> 
+						<a href="#" class="stopBtn"> 
+							<img src="images/pop_btn_stop_off.gif" alt="정지버튼" />
+						</a>
+					</p>
+				</div>
+				
+				<!-- 탭메뉴  -->
+				<dl id="tabmenu">
+					<dt class="tab_btn1">
+						<a href="#"><img src="images/tab_btn_1_over.gif" alt="공지사항" /></a>
+					</dt>
+					<dd>
+						<ul>
+							<li><a href="#">공지사항 관련된 내용입니다.</a><span>2014-03-01</span></li>
+							<li><a href="#">공지사항 관련된 내용입니다.</a><span>2014-03-01</span></li>
+							<li><a href="#">공지사항 관련된 내용입니다.</a><span>2014-03-01</span></li>
+							<li><a href="#">공지사항 관련된 내용입니다.</a><span>2014-03-01</span></li>
+							<li><a href="#">공지사항 관련된 내용입니다.</a><span>2014-03-01</span></li>
+						</ul>
+						<p>
+							<a href="#"><img src="images/tab_more_btn.gif" alt="더보기" /></a>
+						</p>
+					</dd>
+					<dt class="tab_btn2">
+						<a href="#"><img src="images/tab_btn_2_out.gif" alt="질문과답변" /></a>
+					</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">질문과답변 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">질문과답변 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">질문과답변 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">질문과답변 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">질문과답변 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+						</ul>
+						<p>
+							<a href="#"><img src="images/tab_more_btn.gif" alt="더보기" /></a>
+						</p>
+					</dd>
+					<dt class="tab_btn3">
+						<a href="#"><img src="images/tab_btn_3_out.gif" alt="저자문의" /></a>
+					</dt>
+					<dd>
+						<ul>
+							<li>
+								<a href="#">저자문의 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">저자문의 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">저자문의 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">저자문의 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+							<li>
+								<a href="#">저자문의 관련된 내용입니다.</a> <span>2014-03-01</span>
+							</li>
+						</ul>
+						<p>
+							<a href="#"><img src="images/tab_more_btn.gif" alt="더보기" /></a>
+						</p>
+					</dd>
+				</dl>
+				<!-- 탭메뉴 close -->
+				
+				<!-- 알림 배너  영역은 순수 html태그로만 구성함.  
+				         단 css는 main.css에  #consult_wrap{float:right;}로 하여 오른쪽으로 정렬 되도록 함-->
+				<ul id="consult_wrap">
+					<li>
+						<img src="images/banner_consult.gif" alt="출판상담문의 02-3235-1722" />
+					</li>
+					<li>
+						<img src="images/banner_support.gif" 
+							 alt="원고 양식 다운받기 및 지원 easy@easypub.co.kr" usemap="#support" /> 
+						<map name="support" id="support">
+							<area shape="rect" coords="9,29,126,53" 
+							      href="#"
+								  alt="원고 양식 다운 받기" />
+						</map>
+					</li>
+				</ul>
+				<!-- 알림 배너  영역  close -->
+			</div>
+			<!-- contents_top close -->
+		
+			<!-- 
+				 자동 슬라이드 배너 를 이용한 베스트 Book영역   
+				 https://bxslider.com/ 접속하여 사용법 보기 
+			-->
+			<div id="bestbook_zone">
+				<h3>
+					<img src="images/bestbook_title.gif" alt="이지스퍼블리싱 베스트 책" />
+				</h3>
+				<div id="best_bg">
+					<ul>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_1.png" alt="" />
+								<span> <strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_2.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_3.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_4.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_5.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_6.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_7.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_8.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/bestbook_list_9.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span> 
+							</a>
+						</li>
+						<li>
+							<a href="#"> 
+								<img src="images/bestbook_list_10.png" alt="" /> 
+								<span><strong>책 제목</strong>책 저자</span>
+							</a>
+						</li>
+					</ul>
+					<p class="prev_btn">
+						<a href="#"> 
+							<img src="images/bestbook_btn_left.png" alt="이전으로 이동" />
+						</a>
+					</p>
+					<p class="next_btn">
+						<a href="#"> 
+							<img src="images/bestbook_btn_right.png" alt="다음으로 이동" />
+						</a>
+					</p>
+				</div>
+			</div>
+			<!-- 자동 슬라이드 배너 를 이용한 베스트 Book영역  close -->
+
+			<div id="contents_bottom">
+				<!-- 페이스북 소셜 플러그인 연동 하기  영역 -->
+				<div id="facebook_wrap">
+					<h3>
+						<img src="images/facebook_title.gif" alt="페이스 북" />
+					</h3>
+					<p>
+						<iframe
+							src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FFacebookDevelopers&amp;width=285&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"
+							scrolling="no" frameborder="0"
+							style="border: none; overflow: hidden; width: 100%; height: 258px;"
+							allowTransparency="true"></iframe>
+					</p>
+				</div>
+				<!-- 페이스북 소셜 플러그인 연동 하기  영역  close-->
+				
+				<div id="marketing_wrap">
+					<h3>
+						<img src="images/maket_title.gif" alt="마케팅" />
+					</h3>
+					<dl class="first">
+						<dt>
+							<a href="#">Do it! HTML5+CSS3 웹 표준의 정석 동영상 강좌</a>
+						</dt>
+						<dd class="img_wrap">
+							<a href="#"><img src="images/maket_img_1.gif" alt="" /></a>
+						</dd>
+						<dd>
+							<a href="#">기초부터 반응형 웹까지! HTMl5 권위자에게 정석으로...</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<a href="#">Do it! 안드로이드 진도표와 동영상 강좌</a>
+						</dt>
+						<dd class="img_wrap">
+							<a href="#"><img src="images/maket_img_2.gif" alt="" /></a>
+						</dd>
+						<dd>
+							<a href="#">음부터 끝까지 보기 힘든 초보자를 위해 섹션별 난이도를 표시해 놓았습니다.</a>
+						</dd>
+					</dl>
+				</div>
+				<div id="online_wrap">
+					<h3>
+						<img src="images/online_title.gif" alt="온라인 서점" />
+					</h3>
+					<ul>
+						<li>
+							<a href="#">
+								<img src="images/online_banner_1.gif" alt="배너1" />
+							</a>
+						</li>
+						<li class="fl_r">
+							<a href="#">
+								<img src="images/online_banner_2.gif" alt="배너2" />
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/online_banner_3.gif" alt="배너3" />
+							</a>
+						</li>
+						<li class="fl_r">
+							<a href="#">
+								<img src="images/online_banner_4.gif" alt="배너4" />
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="images/online_banner_5.gif" alt="배너5" />
+							</a>
+						</li>
+						<li class="fl_r">
+							<a href="#">
+								<img src="images/online_banner_6.gif" alt="배너6" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- close of contents_bottom -->
+			
+			<!-- 옆의 스크롤 퀵메뉴 -->
+			<!-- 순서1. common.css파일에 #quick_menu 퀵메뉴 div를 선택해..
+					   position:absolute속성을 이용하여 퀵메뉴에 위치를 지정함
+			 	 순서2. common.js파일에
+			 	             스크롤바가 y축으로 이동 될때  마다 
+			 	             스크롤바가 상단에서 이동한 거리만큼 비례하여 이동되도록함 
+			 -->
+			<div id="quick_menu">
+				<h3>
+					<img src="images/quick_title.png" alt="퀵 메뉴" />
+				</h3>
+				<ul>
+					<li>
+						<a href="#">
+							<img src="images/quick_list_1.png" alt="저자지원" />
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/quick_list_2.png" alt="교재/강의 요청" />
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/quick_list_3.png" alt="신간도서" />
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/quick_top_btn.png" alt="상단으로 이동" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 옆의 퀵메뉴  close -->
+			
+			<!-- 쿠키 플러그인을 활용해 팝업창 만들기 
+				- 팝업창의 내용은 이미지로 구성 되어 있어 <map>태그를 사용하여 
+				  [창닫기] 및 [하루동안 이창 열지 않기] 버튼에 링크를 걸었습니다.
+				  
+				- main.css파일에  position:absolute을 적용하여 팝업 창의 위치를 지정 했고,
+				  z-index:30 속성을 적용하여 팝업창이 다른 요소보다 위에 떠있도록 함.
+				 
+				- 팝업창을 드래그하여 이동 시키려면 , "제이쿼리 UI 플러그인"을 사용 합니다.
+				    그리고 [하루동안 이창 열지 않기]버튼 기능을 사용하기 위해서는 "쿠키 플러그인"을 사용 합니다.
+				    
+				- 쿠키란? 방문자가 사이트를 방문 했을때, 방문자 컴퓨터의 임시 저장소에 소량의 특정정보(최대 4KB)     
+				                 를 담은 쿠키 파일이 저장 됩니다. 그리고 이렇게 만들어진 쿠키 파일에 만료일을 적용하면,
+				                 방문자에 저장된 쿠키 파일은 만료일을 넘기면 더이상 사용할수 없는 정보가 됩니다.
+				                이렇듯 쿠키를 사용하면  하루동안 열리지 않는 팝업창이나 로그인시 아이디 자동 저장, 
+				                그리고 쇼핑몰에 장바구니 기능을 구현할수 있습니다.
+			
+				- 쿠키 플러그인 사용 방법
+				    쿠키플러그인 다운 코드 주소 : https://github.com/carhartl/jQuery-cookie     
+				             (1) 다운로드 받은 jquery-cookie-master.zip파일 압축 해제 
+				             (2) 압축 해제 후 src폴더 내부로 들어가서...jquery.cookie.js파일 프로젝트에 복사
+				             (3) jquery.cookie.js파일 연동을 위해 index.html 위쪽 상단 <head>태그 사이에
+				                 <script type="text/javascript" src="js/jquery.cookie.js"></script> 링크 작성
+		        - 제이쿼리 UI플러그인 사용 방법
+		                   코드 다운로드	주소   : http://jQueryui.com/download/
+		 	 				 (1) 다운로드 받은 jquery-ui-1.10.4.custom.zip파일 압축 해제 
+				             (2) 압축 해제 후 jquery-ui-1.10.4.custom.js파일 프로젝트에 복사
+				             (3) jquery-ui-1.10.4.custom.js파일 연동을 위해 index.html 위쪽 상단 <head>태그 사이에
+                 			 <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>링크 작성
+				- main.js파일로 가서 작성
+				           
+			--> 
+			<p id="pop_wrap">
+				<img src="images/popup.jpg" alt="검색이 잘되는 키워드는 따로 있다!" usemap="#pop" />
+				<map name="pop" id="pop">
+					<area shape="rect" coords="255,332,290,345" href="#" alt="창닫기" />
+					<area shape="rect" coords="95,332,215,345" href="#" alt="하루동안 창 닫기" />
+				</map>
+			</p>
+			<!-- 쿠키 플러그인을 활용해 팝업창 만들기  close -->
+
+		</div>
+		<!-- 콘텐츠 영역 close -->
+	</div>
+	<!-- close of wrap -->
+	<hr />
+	
+	<!-- 푸터 영역 -->
+	<div id="footer_wrap">
+		<div id="inner_footer">
+			<h3 class="footer_logo">
+				<a href="#"><img src="images/footer_logo.gif" alt="이지스퍼블리싱" /></a>
+			</h3>
+			<dl id="bottom_menu">
+				<dt class="hide">하단메뉴</dt>
+				<dd>
+					<a href="#"><img src="images/bttom_menu_1.gif" alt="" /></a>
+				</dd>
+				<dd>
+					<a href="#"><img src="images/bttom_menu_2.gif" alt="" /></a>
+				</dd>
+				<dd>
+					<a href="#"><img src="images/bttom_menu_3.gif" alt="" /></a>
+				</dd>
+				<dd>
+					<a href="#"><img src="images/bttom_menu_4.gif" alt="" /></a>
+				</dd>
+				<dd>
+					<a href="#"><img src="images/bttom_menu_5.gif" alt="" /></a>
+				</dd>
+				<dd>
+					<a href="#"><img src="images/bttom_menu_6.gif" alt="" /></a>
+				</dd>
+			</dl>
+			<!-- 관련 사이트로 이동  -->
+			<div id="relSite_wrap">
+				<h3>
+					<img src="images/rel_site_title.gif" alt="관련사이트 이동하기" />
+				</h3>
+				<form action="#" method="get" name="rel_f">
+					<fieldset>
+						<legend>관련 사이트 이동</legend>
+						<select name="rel_select">
+							<option value="http://www.nl.go.kr">국릭 중앙 도서관</option>
+							<option value="http://www.nanet.go.kr">국회 도서관</option>
+							<option value="http://www.dlibrary.go.kr">국가 전자 도서관</option>
+						</select> 
+						<input type="image" src="images/rel_site_btn.gif" alt="관련사이트 이동" />
+					</fieldset>
+				</form>
+			</div>
+			<!-- 관련 사이트로 이동  close -->
+			<address>
+				<img src="images/address.gif"
+					alt="서울시 마포구 서교동 375-13 성지빌딩 301호, 
+ 						 121-894 대표전화 (02) 325-1755 / 326-1723 이메일 easy@easypub.co.kr Copyright &copy; 
+ 						 2011-2012 이지스퍼블리싱. All Rights Reserved" />
+			</address>
+		</div>
+	</div>
+	<!-- 푸터 영역  close -->
+</body>
+</html>
