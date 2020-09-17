@@ -33,24 +33,46 @@
 	 			$("h1").fadeOut("fast",function(){ alert("fadeOut 완료!"); });
 	 		});
 	 		
-	 		$("#btn2").on("click",function() {	// == $("#btn2").click(function() {
+	 		$("#btn2").on("click",function() {	
 	 			$("h1").fadeIn(3000,function(){ alert("fadeIn 완료!"); });
 	 		});
 	 		
-	 		$("#btn3").on("click",function() {	// == $("#btn3").click(function() {
+	 		$("#btn3").on("click",function() {
 	 			$("h1").fadeToggle("slow");
 	 		});
 
-	 		$("#btn4").click(function() {
-				$("h1").fadeTo("fast",0.3);
+	 		$("#btn4").click(function() {		// == $("#btn4").on("click",function() {
+				$("h1").fadeTo("fast",0.3);		// 숫자는 투명도임. 0.3 = 30%
 			});
 	 		
 	 		$("#btn5").click(function() {
-				$("h1").fadeTo("slow",1);
+				$("h1").fadeTo("slow",1);		// 숫자는 투명도임. 1 = 100%
 			});
-		});
-		
+	 		
+	 		$("#btn6").on("click",function() {
+	 			$("h1").slideUp(1000);
+	 		});
+	 		
+	 		$("#btn7").on("click",function() {
+	 			$("h1").slideDown(1000);
+	 		});
+	 		
+	 		$("#btn8").on("click",function() {
+	 			$("h1").slideToggle(500);
+	 		});
+	 		
+	 	});
 	</script>
+	
+	<style type="text/css">
+	
+		h1{
+			width: 300px;
+			height: 200px;
+			background-color: skyblue;
+		}
+	
+	</style>
 </head>
 <body>
 	<button id="btn1">fadeOut</button>
@@ -58,6 +80,10 @@
 	<button id="btn3">fadeToggle</button>
 	<button id="btn4">투명도(30%)</button>
 	<button id="btn5">투명도(100%)</button>
+	
+	<button id="btn6">slideUp</button>
+	<button id="btn7">slideDown</button>
+	<button id="btn8">slideToggle</button>
 	<h1>내용</h1>
 </body>
 </html>

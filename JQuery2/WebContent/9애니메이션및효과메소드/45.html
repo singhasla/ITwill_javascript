@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	
+		<!-- 
+				- animate() 메소드	:  선택한 요소에 동작 효과를 적용시킨다.
+										가령, 요소를 앞으로 전진 시키거나 점차 커지게 하는 등..
+										다양한 동작을 적용할 수 있다.
+				
+				//기본문법
+					$(요소선택).animate({애니메이션 관련속성}, "효과속도", 콜백함수);
+				//해석1. {애니메이션 관련속성} 에는 모션(동작)으로 적용할 속성값을 css를 이용해 입력한다.
+				//해석2. "효과속도"는 동작속도를 가리키며, 값으로는 앞서 배운 효과와 같이
+						  slow, normal, fast 또는 밀리초로 입력할 수 있다.
+				//해석3. 콜백함수는 동작이 완료되면 실행되는 함수. 생략 가능함.							
+		-->
+						
+	<script>
+
+		$(function() {
+			$("h1").animate({
+				marginLeft: "250px"
+				}, 5000, function() {
+					alert("h1 도착완료!");				
+			});
+			
+			$("h2").animate({
+				marginLeft: "250px",
+				width: "100px",
+				opacity: "0.3"
+				}, 5000, function() {
+					alert("h2 도착완료!");
+			});
+			
+			$("h3").animate({marginLeft: "250px"}, 3000);
+			$("h3").animate({marginLeft: "150px"}, 2000);			
+			
+			/*  
+			== $("h3").animate({
+				marginLeft: "250px"
+				}, 3000, function() {
+					$("h3").animate({
+						marginLeft: "150px"
+						}, 2000);
+			});
+			*/
+		});
+				
+	</script>
+	
+	<style>
+	
+		h1{
+			width: 50px;
+			height: 30px;
+			background-color: red;
+			font-size: 100%;
+		}
+		
+		h2{
+			width: 50px;
+			height: 30px;
+			background-color: orange;
+			font-size: 100%;
+		}
+		
+		h3{
+			width: 50px;
+			height: 30px;
+			background-color: yellowgreen;
+			font-size: 100%;
+		}
+	
+	</style>
+</head>
+<body>
+	<h1>내용</h1>	<!-- 5초만에 왼쪽 바깥여백을 250px만큼 띄워 앞으로 전진되는 동작을 적용 		-->
+	
+	<h2>내용</h2>	<!-- 5초만에 왼쪽 바깥여백을 250px만큼 띄워 앞으로 전진되게 하고, 
+						 h1요소의 너비를 100px만큼 커지게 하고, 투명도를 30%만 보여주는 동작을 적용	-->
+						 
+	<h3>내용</h3>	<!-- 3초만에 왼쪽 바깥여백을 250px만큼 띄워 앞으로 전진되게 하고, 		 		
+						 2초만에 왼쪽 바깥여백을 150px만큼 띄워 앞으로 전진되게 하는 동작을 적용	-->
+</body>
+</html>
+
