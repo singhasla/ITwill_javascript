@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- JQuery Setup -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	function CheckForm() {
+		
+		//이름을 입력하지 않았을 경우
+		if($("#uName").val() == ""){
+			alert("이름을 입력하시오");
+			$("#uName").focus();
+			
+			return false;
+		}
+				
+		//이름을 2자 미만 또는 5자 초과로 입력했을 경우
+		if( $("#uName").val().length < 2 || $("#uName").val().length > 5){
+			alert("이름은 2~5자 이내로 작성하시오");
+			$("#uName").select();
+			
+			return false;
+		}
+		
+		//아이디를 입력하지 않았을 경우
+		if($("#uID").val() == ""){
+			alert("아이디를 입력하시오");
+			return false;
+		}
+		
+		//비밀번호를 입력하지 않았을 경우
+		if($("#uPWD").val() == ""){
+			alert("비밀번호를 입력해야 합니다");
+			return false;
+		}
+		
+		//입력한 비밀번호가 8자 미만 또는 12자 초과로 입력했을 경우
+		if($("#uPWD").val().length < 8 || $("#uPWD").val().length > 12){
+			alert("비밀번호는 8~12자 이내로 작성하시오");
+			
+			//비밀번호 입력 공간에 입력했던 내용을 지우기 위해 공백으로 설정
+			$("#uPWD").val("");
+			
+			return false;
+		}
+		
+		//비밀번호 입력공간에 입력한 값과 비밀번호 확인입력공간에 입력한 값이 다를 경우?
+		if($("#uPWD").val() != $("#uPWD_Confirm").val()){
+			alert("두 비밀번호가 일치하지 않습니다");
+			
+			//비밀번호 확인입력 공간에 입력했던 내용을 지우기 위해 공백으로 설정
+			$("#uPWD_Confirm").val("");
+			
+			return false;
+		}
+	
+		//직업을 선택하지 않았을 경우
+		if($("#work option:selected").text() == "직업명"){
+			alert("직업을 선택해주세요");
+			return false;
+		}
+
+ 		//성별을 선택하지 않았을 경우
+ 		if( !( $("input[name='sex']:checked").val() ) ){
+ 			alert("성별을 체크해주세요");
+ 			return false;
+ 		}
+
+
+		//취미를 선택하지 않았을 경우
+		if( !$("input[name='hobby']:checked").val() ){
+			alert("취미를 체크해주세요");
+			return false;
+		}
+
+
+		//가입동기를 작성하지 않았을 경우
+		if( $("textarea").val() == "" ){
+			alert("가입동기를 작성해주세요");
+			return false;
+		}
+
+		//폼 양식을 다 갖춰 작성완료 했을 경우
+		alert("가입이 완료되었습니다.");
+		return true;
+	}
+	
+	//아이디 체크 메소드 만들기
+	function CheckID() {
+		
+		//새로운 창을 띄워주자
+		window.open("CheckID_JQ.html", "아이디중복확인", "width=500 height=300");
+	}
+	
+</script>
+</head>
+<body bgcolor="pink">
+	<form action="Register.jsp" name="MemberForm" id="MemberForm" 
+						method="post" onsubmit="return CheckForm();">
+		<table border="1" align="center">
+			<tr>
+				<td colspan="2">회원가입</td>
+			</tr>
+			<tr>
+				<td>*이름</td>
+				<td><input type="text" name="uName" id="uName" /></td>
+			</tr>
+			<tr>
+				<td>*ID</td>
+				<td>
+					<input type="text" name="uID" id="uID" readonly />
+					<input type="button" name="checkID" value="유효성확인" onclick="CheckID();"/>
+				</td>
+			</tr>
+			<tr>
+				<td>*비밀번호</td>
+				<td><input type="password" name="uPWD" id="uPWD" />
+			</tr>
+			<tr>
+				<td>*비밀번호 확인</td>
+				<td><input type="password" name="uPWD_Confirm" id="uPWD_Confirm" />
+			</tr>
+			<tr>
+				<td>*직업</td>
+				<td>
+					<select name="work" id="work">
+						<option selected>직업명</option>
+						<option value="기타">기타</option>
+						<option value="회사원">회사원</option>
+						<option value="학생">학생</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>*성별</td>
+				<td>
+					남자 <input type="radio" name="sex" id="s1" value="male"/>
+					여자 <input type="radio" name="sex" id="s2" value="female"/>
+				</td>
+			</tr>
+			<tr>
+				<td>*취미</td>
+				<td>
+					<input type="checkbox" name="hobby" id="h1" value="독서"/>독서
+					<input type="checkbox" name="hobby" id="h2" value="등산"/>등산
+					<input type="checkbox" name="hobby" id="h3" value="낚시"/>낚시
+				</td>
+			</tr>
+			<tr>
+				<td>*가입동기</td>
+				<td>
+					<textarea rows="20" cols="100" name="motivation"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="가입" />
+					<input type="reset" value="다시 입력 "/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
