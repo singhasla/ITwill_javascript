@@ -334,18 +334,15 @@ $(function() {
 	  /*전체 메뉴 닫기 버튼*/
 	  
 	  //id속성값이  total_close인  <p>태그 내부의  <a>태그를 클릭했을때..[ClOSE] 영역을 클릭했을때..
- 
 	  //id속성값이  totla_menu인  <div id="total_menu">(하위 메뉴 영역)이 
 	  //위로 접히면서 숨겨지게 하기  효과속도는 "fast"
-	  $("#total_close").on("click",function(){
+	  $("#total_close>a").on("click",function(){
 		  $("#total_menu").slideUp("fast");
-	  });
-	  
-        //[전체메뉴]▲ 이미지 이면
-  			//[전체메뉴]▼이미지로 바뀌게 하기 
-  
+		  $("#total_btn>a").children("img").attr("src","images/allmenu_btn_out.gif");
+		  
         //<a>태그의 전송(이동)을 차단 
-	  
+		  return false;
+	  });
 	  
 //-----------------------------------------------------------------------------------------------------
 
@@ -355,7 +352,56 @@ $(function() {
   Date객체를 사용하여 오늘의 날짜 정보를 구해 올것입니다.
   */
   
-  /*날짜 표기*/
+  /*날짜 표기*/  
+	  function clock() {
+		    var date = new Date();
+		    // date Object를 받아오고 
+
+		    var year = date.getFullYear();
+		    // 연도를 받아옵니다
+		    
+		    var month = date.getMonth();
+		    // 달을 받아옵니다 
+		    
+		    var clockDate = date.getDate();
+		    // 몇일인지 받아옵니다 
+		   
+		    var day = date.getDay();
+		    // 요일을 받아옵니다. 
+		   
+		    var week = ['일', '월', '화', '수', '목', '금', '토'];
+		    // 요일은 숫자형태로 리턴되기때문에 미리 배열을 만듭니다. 
+		    
+		    var hours = date.getHours();
+		    // 시간을 받아오고 
+		    
+		    var minutes = date.getMinutes();
+		    // 분도 받아옵니다.
+		    
+		    var seconds = date.getSeconds();
+		    // 초까지 받아온후 
+		
+
+		  $("#date_wrap .year").html(year);
+	      $("#date_wrap .month").html(month+1);
+	      $("#date_wrap .date").html(clockDate);
+	      $("#date_wrap .hour").html(hours);
+	      $("#date_wrap .minute").html(minutes);
+	      $("#date_wrap .second").html(seconds);
+
+	  }
+
+	  function init() {
+
+		  clock();
+		  // 최초에 함수를 한번 실행시켜주고 
+		  setInterval(clock, 1000);
+		  // setInterval이라는 함수로 매초마다 실행을 해줍니다.
+		  // setInterval은 첫번째 파라메터는 함수이고 
+		  // 두번째는 시간인데 밀리초단위로 받습니다. 1000 = 1초 
+	  }
+
+	  init(); 
 
 //-----------------------------------------------------------------------------------------------------
 
