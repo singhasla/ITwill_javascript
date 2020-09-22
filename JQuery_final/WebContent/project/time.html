@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- JQuery Setup -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+	<script>
+
+	function time(){
+		
+		//현재 날짜 정보를 제공해주는 Date객체 생성, d변수에 저장
+		var d = new Date();
+	
+		//요일 정보를 만들어서 배열에 저장
+		var dd = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+		//			  0 	   1		2		 3  	  4        5		6
+		
+		//현재 요일 정보를 숫자로 얻자.
+		var day = d.getDay();
+		
+		
+		var year = d.getFullYear();		//연
+		var month = d.getMonth();		//월
+		var sysdate = d.getDate();		//일
+		
+		var hour = d.getHours();		//시
+		var minute = d.getMinutes();	//분
+		var second = d.getSeconds();	//초
+		
+		//'분' 정보를 구해서 다시 얻자
+		minute = dasi(minute);
+		//'초' 정보를 구해서 다시 얻자
+		second = dasi(second);
+		
+		
+		//id속성값이 test인 <div>요소를 선택해서 innerHTML속성의 값으로 현재 요일, 시, 분, 초 설정
+		document.getElementById("test").innerHTML = dd[day] + "day " + hour + " : " + minute + " : " + second;
+		
+		//1초마다 '초'를 갱신해야한다.
+		//일정한 시간간격으로 실행문을 실행할 때 사용되는 함수 -> setTimeout(실행문, 시간 간격의 값);
+		setTimeout(function(){time()}, 1000);
+	}
+	
+	
+	//dasi함수 : 분, 초 정보를 매개변수로 전달받아 만약 그 수가 10보다 작다면 글자앞에 0을 추가시키는 함수
+	function dasi(i) {
+		
+		if(i < 10){
+			i = "0" + i;	//한자리 숫자를 두자리숫자로 바꾸기. ex) 1 => 01 ,		9 => 09
+		}
+		
+		return i;
+	}
+
+	</script>
+</head>
+<body onload="time();">	<!-- <body>태그 내부의 HTML태그들을 웹브라우저가 모두 로딩했을때... -->
+
+	<!-- 현재 요일, 시, 분, 초 출력 -->
+	<div id="test"></div>
+	
+</body>
+</html>

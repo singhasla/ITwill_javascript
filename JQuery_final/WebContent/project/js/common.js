@@ -333,12 +333,12 @@ $(function() {
 	  
 	  /*전체 메뉴 닫기 버튼*/
 	  
-	  //id속성값이  total_close인  <p>태그 내부의  <a>태그를 클릭했을때..[ClOSE] 영역을 클릭했을때..
+	  //id속성값이  total_close인  <p>태그 내부의  <a>태그를 클릭했을때..[CLOSE] 영역을 클릭했을때..
 	  //id속성값이  totla_menu인  <div id="total_menu">(하위 메뉴 영역)이 
 	  //위로 접히면서 숨겨지게 하기  효과속도는 "fast"
-	  $("#total_close>a").on("click",function(){
+	  $("#total_close a").on("click",function(){
 		  $("#total_menu").slideUp("fast");
-		  $("#total_btn>a").children("img").attr("src","images/allmenu_btn_out.gif");
+		  $("#total_btn a img").attr("src","images/allmenu_btn_out.gif");
 		  
         //<a>태그의 전송(이동)을 차단 
 		  return false;
@@ -352,7 +352,9 @@ $(function() {
   Date객체를 사용하여 오늘의 날짜 정보를 구해 올것입니다.
   */
   
-  /*날짜 표기*/  
+	  clock();
+	  
+	  /*날짜 표기*/  
 	  function clock() {
 		    var date = new Date();
 		    // date Object를 받아오고 
@@ -377,32 +379,40 @@ $(function() {
 		    
 		    var minutes = date.getMinutes();
 		    // 분도 받아옵니다.
+		    var min = dasi(minutes);
+		    
 		    
 		    var seconds = date.getSeconds();
 		    // 초까지 받아온후 
+		    var sec = dasi(seconds);
+		    
+
+		  $("#date_wrap .year").text(year);
+	      $("#date_wrap .month").text(month+1);
+	      $("#date_wrap .date").text(clockDate);
+	      $("#date_wrap .hour").text(hours);
+	      $("#date_wrap .minute").text(min);
+	      $("#date_wrap .second").text(sec);
+	      
+	      
+	      setInterval(clock , 1000);		//	일정한 시간간격으로 실행문을 실행시키는 함수
+		  // <-> clearInterval(intervalID)	//	setInterval()함수를 제거(정지)
+	      
+	  }
+	  
+	  	  	  
+	  
+	  //dasi함수 : 분, 초 정보를 매개변수로 전달받아 만약 그 수가 10보다 작다면 글자앞에 0을 추가시키는 함수
+		function dasi(i) {
+			
+			if(i < 10){
+				i = "0" + i;	//한자리 숫자를 두자리숫자로 바꾸기. ex) 1 => 01 ,		9 => 09
+			}
+			
+			return i;
+		}
+
 		
-
-		  $("#date_wrap .year").html(year);
-	      $("#date_wrap .month").html(month+1);
-	      $("#date_wrap .date").html(clockDate);
-	      $("#date_wrap .hour").html(hours);
-	      $("#date_wrap .minute").html(minutes);
-	      $("#date_wrap .second").html(seconds);
-
-	  }
-
-	  function init() {
-
-		  clock();
-		  // 최초에 함수를 한번 실행시켜주고 
-		  setInterval(clock, 1000);
-		  // setInterval이라는 함수로 매초마다 실행을 해줍니다.
-		  // setInterval은 첫번째 파라메터는 함수이고 
-		  // 두번째는 시간인데 밀리초단위로 받습니다. 1000 = 1초 
-	  }
-
-	  init(); 
-
 //-----------------------------------------------------------------------------------------------------
 
   /*
@@ -414,11 +424,49 @@ $(function() {
   */
   
    /*관련 사이트 이동*/
+		
+		//요약 : [이동] 이미지 버튼(전송버튼)을 클릭했을때..
+		$("form[name=rel_f]").on("submit",function() {
+			
+			//전송이 일어난 <form>요소의 하위 <select>태그 선택
+			var url = $("select", this).val();
+			
+			//새로운 브라우저창을 띄워 변수 url에 저장된 주소값을 이용해 사이트로 이동하여 나타내자
+			window.open(url);
+			
+			//[이동] <img>전송버튼을 눌렀을때.. <form>태그의 action속성의 서버페이지로 전송을 차단
+			return false;
+		});
   
 
  //-----------------------------------------------------------------------------------------------------
 
   /*옆쪽 퀵 메뉴*/
 
+		//index.html 처음 실행 했을 때 문서 상단에서 퀵 메뉴의 여백 거리값을 구하기 위해
+		//css파일에서 #quick_menu의 position속성의 top값을 구함
+		//이때 픽셀단위가 붙게 되는데.. 정수만 남기기 위해 parseInt()메소드를 사용하여 호출
+		//요약 : 기본 문서 상단에서 퀵메뉴가 이동한 거리값을 구한다
+		var defaultTop = parseInt($("#quick_menu").css("top"));	// 100px --> parseInt("100px"); --> 100
+		
+
+		//브라우저(window)에 스크롤 막대바가 이동될 때마다
+		$(window).on("scroll", function() {
+			
+			//스크롤 막대바의 이동 높이값을 얻어 scv변수에 저장
+			var scv = $(window).scrollTop();
+			
+			//스크롤 막대바가 이동될 때마다 <div id="quick_menu">태그에 animate()메소드를 적용시키자
+			//이때 scv변수값(스크롤바의 이동높이값)을 top이라는 속성에 적용하여..
+			//1초만에 스크롤바의 이동거리만큼 <div>태그가 이동되도록 함.
+			//그리고 index.html을 처음 실행 했을때 문서상단에서 퀵 메뉴의 여백 거리값을 이용해서
+			//defaultTop변수의 값을 더하여 상단에서 여백거리만큼 떨어져서 이동되도록 함.
+			//이때 방문자가 스크롤막대를 위 아래로 계속해서 움직이면 animate()메소드가 여러번 작동되어
+			//큐에 animate()메소드가 많이 쌓이게 되는데,
+			//이를 방지하기 위해 stop()메소드를 적용하여 앞서 적용된 animate()메소드는 정지 되도록 함.
+			$("#quick_menu").stop().animate({top: defaultTop + scv + "px"}, 1000);
+			
+		});
+		
 
 });
