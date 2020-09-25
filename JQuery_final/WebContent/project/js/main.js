@@ -361,7 +361,34 @@ $(function() {
 	  //그리고 draggable()메소드를 이용하여 마우스로 드래그 했을 때 팝업창이 부드럽게 이동되도록 해보자
 	  $("#pop_wrap").css("cursor","move").draggable();
 
-
+	  //팝업창 $("#pop_wrap")의 하위 <area>태그 중.. 
+	  //0번째 인덱스 위치에 있는 [창닫기] 메뉴 버튼 영역을 선택해서 클릭했을때
+	  $("#pop_wrap area:eq(0)").on("click",function(){
+		  
+		  //팝업창 <p>요소영역을 선택해 fadeOut("fast")메소드를 이용하여
+		  //팝업창이 점점 투명해 지면서 사라지게 만들자
+		  $("#pop_wrap").fadeOut("fast");
+		  
+		  return false;
+	  });
+	  
+	  //[하루동안 이 창 열지 않기] 영역 (2번째 area태그영역)을 클릭햇을때..
+	  
+	  $("#pop_wrap area:eq(1)").on("click",function(){
+		  
+		  //쿠키를 생성
+		  //쿠키명 "pop"에 쿠키값 "no"를 저장합니다.
+		  //만료일(삭제)(expires)은 오늘로부터 하루가 지나야 합니다.
+		  $.cookie("pop","no",{expires:1});
+		  
+		//팝업창이 점점 투명해 지면서 사라지게 만들자
+		  $("#pop_wrap").fadeOut("fast");
+		  
+		  return false;
+	  });
+	  
+	  
+	  
   //크롬(Chrome)브라우저로 쿠키를 확인하는 방법을 알아보도록 해요. 
 //  - 개발자도구(F12) 를 연후 Appliecation -> Storage -> Cookies 에서 확인 가능하다.
 
