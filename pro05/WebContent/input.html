@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		<input>태그의 type속성값을 checkbox로 주어 그 중에서 체크된 값만 여러개 다중 전송
+		전송시.. 체크박스의 name속성값은 모두 subject이므로 서블릿으로 전송할 때 String[] 배열로 전송함.
+	 -->
+	 <form action="input" name="frmInput" method="get">
+	 
+	 	아이디 : <input type="text" name="user_id"/><br>
+		비밀번호 : <input type="password" name="user_pw"/><br>
+		
+		<input type="checkbox" name="subject" value="Java">자바
+		<input type="checkbox" name="subject" value="C">씨언어
+		<input type="checkbox" name="subject" value="JSP">제이에스피
+		<input type="checkbox" name="subject" value="Android">안드로이드
+		
+		<br><br>
+		
+		<input type="submit" value="전송"/>
+		<input type="reset" value="취소"/>
+	 
+	 </form>
+</body>
+</html>

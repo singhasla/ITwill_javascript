@@ -9,29 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  
-  <!-- 클라이언트가 웹브라우저를 이용해서 요청할 서블릿의 가짜 주소 매칭 -->
   <servlet>
-  
-  	<!-- 같은 이름으로 옛 주소와 새 주소를 매칭 -->
-  	<servlet-name>aaa</servlet-name>
-  	<!-- 클라이언트가 실제 요청할 서블릿의 경로 -->
-  	<servlet-class>sec01.ex01.FirstServlet</servlet-class>
-  	
+    <servlet-name>aaa</servlet-name>
+    <servlet-class>sec01.ex01.FirstServlet</servlet-class>
   </servlet>
-  
-  
-  
-  <!-- 클라이언트가 요청할 서블릿의 가상 주소 설정 -->
   <servlet-mapping>
-  
-  	<!-- 같은 이름으로 옛 주소와 새 주소를 매칭 -->
- 	<servlet-name>aaa</servlet-name>
-  	<!-- /가짜주소-->
-  	<url-pattern>/first</url-pattern>
-  	
+    <servlet-name>aaa</servlet-name>
+    <url-pattern>/first</url-pattern>
   </servlet-mapping>
-  
-  
 </web-app>
