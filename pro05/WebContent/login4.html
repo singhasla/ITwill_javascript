@@ -22,7 +22,7 @@
 						파일을 업로드할 때는 multipart/form-data로 지정해야 한다.
 	 -->
 	
-	<form action ="login" name="formLogin" method="get" encType="UTF-8">
+	<form action ="login4" name="formLogin" method="get" encType="UTF-8">
 
 		아이디 : <input type="text" name="user_id"/><br>
 		비밀번호 : <input type="text" name="user_pw"/><br>
@@ -30,5 +30,25 @@
 		<input type="reset" value="다시입력"/>
 
 	</form>
+	
+	<!-- 
+		서블릿으로 요청하는 방식 종류
+		
+		1. GET방식
+			- 서블릿에 데이터를 전송할 때는 URL주소 뒤에 name=value 형태로 전송된다.
+			- 여러개의 데이터를 전송할 때는 '&'로 구분해서 전송된다.
+			- 보안에 취약함.
+			- 전송할 수 있는 데이터는 최대 255자.
+			- 기본 전송 방식이고 사용이 쉽다.
+			- 웹브라우저 주소창에 전송할 데이터를 직접 입력해서 전송할 수도 있다.
+			- 서블릿에서는 doGet()메소드로 전송된 데이터를 처리한다.
+			
+		2. POST방식
+			- 서블릿에 데이터를전송할 때는 TCP/IP 프로토콜 데이터의 HEAD영역에 숨겨진 채 전송한다.
+			- 보안에 유리함.
+			- 전송할 수 있는 데이터는 무제한.
+			- 전송시 서블릿에서는 또 다시 가져오는 작업을 해야하므로 처리 속도가 GET방식보다 느리다.
+			- 서블릿에서는 doPost()를 이용해 전송된 데이터를 처리한다.
+	 -->
 </body>
 </html>

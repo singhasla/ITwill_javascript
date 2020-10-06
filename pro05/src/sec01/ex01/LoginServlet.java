@@ -25,18 +25,17 @@ public class LoginServlet extends HttpServlet {
 		//1. 클라이언트가 입력한 값(요청한 값) 얻기
 		request.setCharacterEncoding("UTF-8");
 		
-		//request객체의 getParameter()메소드를 이용하여 입력한 요청값들을 request메모리에서 꺼내오기
+		//2. request객체의 getParameter()메소드를 이용하여 입력한 요청값들을 request메모리에서 꺼내오기
 		//입력한 아이디 얻기
 		String user_id = request.getParameter("user_id");
 		//입력한 비밀번호 얻기
 		String user_pw = request.getParameter("user_pw");
 		
+		//3. 요청한 값을 이용해서 클라이언트의 웹브라우저로 응답(출력)할 값을 마련
 		System.out.println("입력한 아이디: " + user_id);
 		System.out.println("입력한 비밀번호: " + user_pw);
-		//2. 요청한 값을 이용해서 클라이언트의 웹브라우저로 응답할 값을 마련
 		
-		//3. 마련한 응답할 값을 클라이언트의 웹브라우저로 다시 전송해서 출력(응답)
-		
+		//4. 마련한 응답할 값을 클라이언트의 웹브라우저로 다시 전송해서 출력(응답)
 		System.out.println("doGet메소드 호출됨");
 	}
 	
