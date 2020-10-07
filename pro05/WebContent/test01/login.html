@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+	test01폴더에 위치한 HTML파일에서 서블릿에 요청ㅎ므로
+	<form>태그의 action속성에서 서블릿 매핑이름앞에 프로젝트 이름!
+	즉! '/pro05'를 붙여주어야 한다.
+ -->
+	<form action="/pro05/loginTest" name="frmLogin" method="post" enctype="UTF-8">
+	
+		아이디 : <input type="text" name="user_id"/>		<br>
+		비밀번호 : <input type="password" name="user_pw"/>	<BR>
+		<input type="submit" value="로그인"/>
+		<input type="reset" value="다시입력"/>
+		
+	</form>
+
+</body>
+</html>
