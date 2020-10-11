@@ -112,9 +112,9 @@ public class MemberDAO {
 				
 				if(conn != null){conn.close();}
 				
-			} catch (Exception e2) {
+			} catch (SQLException e) {
 				//?????????????????????????
-				e2.printStackTrace();
+				e.printStackTrace();
 			}
 			
 		}
