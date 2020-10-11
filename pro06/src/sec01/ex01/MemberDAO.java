@@ -7,7 +7,7 @@ public class MemberDAO {
 
 	// 1. import java.sql.* 과 오라클 DBMS의 테이블과 연결할 4가지 접속할 정보 설정
 	// 		드라이버 파일명 		-> oracle.jdbc.driver.OracleDriver
-	// 		DB에 접속주소 정보 		-> jdbc:oracle:thin:@ip주소:포트번호:SID
+	// 		DB에 접속주소 정보 	-> jdbc:oracle:thin:@ip주소:포트번호:SID
 	// 		DB접속 사용자 아이디 	-> scott
 	// 		DB접속 사용자 비밀번호 	-> tiger
 	
