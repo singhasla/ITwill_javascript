@@ -3,7 +3,7 @@ package sec01.ex01;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,16 +32,26 @@ public class MemberServlet extends HttpServlet {
 		//listMembers()메소드를 호출하여 검색한 회원정보를 각각 MeberVO객체에 저장하여
 		//각각의 MemberVO객체들을 최종적으로 ArrayList가변길이 배열에 저장 후
 		//DB에서 검색한 회원정보들(MemberVO객체들)을 담고 있는 ArrayList배열을 리턴받는다.
-		List list = dao.listMembers();
+		ArrayList list = dao.listMembers();
 		
+		
+		//웹페이지에 DB에서 가져온 값 출력
 		out.print("<html><body>");
 		out.print("<table border=1><tr align='center' bgcolor='lightgreen'>");
 		out.print("<td>아이디</td><td>비밀번호</td><td>이름</td><td>이메일</td><td>가입일</td></tr>");
 		
-		for(int i=0; i<list.size();i++){
+		for(int i=0; i<list.size();i++){	//가변길이 배열클래스의 크기는 size()메소드 사용
 			//조회한 회원정보는 ArrayList라는 가변길이 배열 공간에 저장되어있으므로
 			//ArrayList 가변길이 배열에 저장된 검색한 회원정보를 하나씩 얻는다.
-			MemberVO memberVO = (MemberVO)list.get(i);
+			Object obj = list.get(i);	//ArrayList배열의 인덱스 위치를 이용하여
+										//인덱스 위치에 저장된 MemberVO객체를 꺼내온다.
+										//업캐스팅이 일어남
+			//obj.getter? (x,사용불가)
+			//다운캐스팅을 시켜줌으로써, MemberVO객체의 getter메소드를 호출할 수 있게 된다.
+			MemberVO memberVO = (MemberVO)obj;	//다운캐스팅.
+			//=> 한줄 요약 == MemberVO memberVO = (MemberVO)list.get(i);
+		
+			
 			String id = memberVO.getId();
 			String pwd = memberVO.getPwd();
 			String name = memberVO.getName();
@@ -49,11 +59,13 @@ public class MemberServlet extends HttpServlet {
 			Date joindate = memberVO.getJoindate();
 			
 			//조회한 회원 정보를 바깥 for문과 <tr>태그를 이용해 리스트로 출력한다.
-			out.print("<tr><td>" + id + "</td>"
-						  + "<td>" + pwd + "</td>"
-						  + "<td>" + name + "</td>"
-						  + "<td>" + email + "</td>"
-						  + "<td>" + joindate + "</td></tr>");
+			out.print("<tr>"
+							+ "<td>" + id + "</td>"
+							+ "<td>" + pwd + "</td>"
+							+ "<td>" + name + "</td>"
+							+ "<td>" + email + "</td>"
+							+ "<td>" + joindate + "</td>"
+					+ "</tr>");
 			
 		}
 		

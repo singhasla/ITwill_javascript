@@ -30,7 +30,7 @@ public class MemberDAO {
 
 	
 	//위 네가지 접속 설정값을 이용해서 오라클 DB와 접속한 정보를 지니고 있는 connection객체를 저장할 변수 선언
-	private Connection connec;
+	private Connection conn;
 	
 	//DB와 접속 후 우리가 만들 sql문을 생성후 실행할 실행 객체를 담을 변수 선언
 	private Statement stmt;
@@ -55,10 +55,10 @@ public class MemberDAO {
 			//				동적으로 생성된 new OracleDriver(); 인스턴스는 /.../DriverManager클래스에 등록되어 잇으므로
 			//				이 드라이버 인스튼스를 통하여 자바 파일과 오라클DB와 접속을 한다.
 			//				자바 파일과 오라클 DB와 접속을 의미하는 T4CConnection인스턴스를 리턴받아 conn변수에 저장함.
-			connec = DriverManager.getConnection(url, user, pwd);
+			conn = DriverManager.getConnection(url, user, pwd);
 			
 			// 4. Statement객체(SQL문을 오라클DB에 전달하여 실행할 객체) 생성하기
-			stmt = connec.createStatement();
+			stmt = conn.createStatement();
 					
 		} catch (Exception e) {
 			System.out.println("DB연결 실패 또는 Statement실행객체 얻기 실패 : " + e);
@@ -69,9 +69,9 @@ public class MemberDAO {
 	
 	
 	//DB의 모든 회원정보를 조회하는 역할의 메소드
-	public List listMembers(){
+	public ArrayList listMembers(){
 		
-		List list = new ArrayList();
+		ArrayList list = new ArrayList();
 		
 		try {
 			connDB();	//4가지 정보(오라클드라이버, 오라클DB접속 주소정보, ID, PW)로 DB와 연결
@@ -82,10 +82,10 @@ public class MemberDAO {
 			
 			// 6. Query DBMS에 전송하여 실행
 			//		Select구문으로 회원정보를 검색한 후 검색한 결과 레코드들을 ResultSet객체에 담아 얻기
-			rs = stmt.executeQuery(query);
+			rs = stmt.executeQuery(query);	//executeQuery()메소드 : select쿼리만 실행할 수 있음
 			
 			//검색한 데이터가 ResultSet객체 메모리에 존재하는 동안 반복
-			while(rs.next()){
+			while(rs.next()){	//ResultSet객체에서 한줄씩 꺼내옴
 				
 				// 7. select문인 경우 검색한 결과값이 저장된 ResultSet내부의 데이터 꺼내오기
 				String id = rs.getString("id");			//검색한 회원 id 얻기
@@ -110,7 +110,7 @@ public class MemberDAO {
 			//자원해제
 			rs.close();
 			stmt.close();
-			connec.close();
+			conn.close();
 			
 		} catch (Exception e) {
 			System.out.println("listMembers메소드 내부에서 오류 : " + e);
