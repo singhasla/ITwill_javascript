@@ -33,6 +33,10 @@ public class MemberVO {
 	private Date joindate;
 	
 
+	public MemberVO(){	//생성자
+		System.out.println("MembeVO 생성자 호출");
+	}
+	
 	// getter, setter
 	// getter 역할을 하는 메소드?
 	//		private으로 선언된 위 변수의 값을 반환할 목적으로 사용됨

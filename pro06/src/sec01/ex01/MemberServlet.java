@@ -2,7 +2,8 @@ package sec01.ex01;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.sql.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,7 +32,32 @@ public class MemberServlet extends HttpServlet {
 		//listMembers()메소드를 호출하여 검색한 회원정보를 각각 MeberVO객체에 저장하여
 		//각각의 MemberVO객체들을 최종적으로 ArrayList가변길이 배열에 저장 후
 		//DB에서 검색한 회원정보들(MemberVO객체들)을 담고 있는 ArrayList배열을 리턴받는다.
-		ArrayList list = dao.listMembers();
+		List list = dao.listMembers();
+		
+		out.print("<html><body>");
+		out.print("<table border=1><tr align='center' bgcolor='lightgreen'>");
+		out.print("<td>아이디</td><td>비밀번호</td><td>이름</td><td>이메일</td><td>가입일</td></tr>");
+		
+		for(int i=0; i<list.size();i++){
+			//조회한 회원정보는 ArrayList라는 가변길이 배열 공간에 저장되어있으므로
+			//ArrayList 가변길이 배열에 저장된 검색한 회원정보를 하나씩 얻는다.
+			MemberVO memberVO = (MemberVO)list.get(i);
+			String id = memberVO.getId();
+			String pwd = memberVO.getPwd();
+			String name = memberVO.getName();
+			String email = memberVO.getEmail();
+			Date joindate = memberVO.getJoindate();
+			
+			//조회한 회원 정보를 바깥 for문과 <tr>태그를 이용해 리스트로 출력한다.
+			out.print("<tr><td>" + id + "</td>"
+						  + "<td>" + pwd + "</td>"
+						  + "<td>" + name + "</td>"
+						  + "<td>" + email + "</td>"
+						  + "<td>" + joindate + "</td></tr>");
+			
+		}
+		
+		out.print("</table></body></html>");
 	}
 
 }

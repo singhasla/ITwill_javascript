@@ -1,7 +1,12 @@
 package sec01.ex01;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MemberDAO {
 
@@ -25,7 +30,7 @@ public class MemberDAO {
 
 	
 	//위 네가지 접속 설정값을 이용해서 오라클 DB와 접속한 정보를 지니고 있는 connection객체를 저장할 변수 선언
-	private Connection conn;
+	private Connection connec;
 	
 	//DB와 접속 후 우리가 만들 sql문을 생성후 실행할 실행 객체를 담을 변수 선언
 	private Statement stmt;
@@ -50,28 +55,30 @@ public class MemberDAO {
 			//				동적으로 생성된 new OracleDriver(); 인스턴스는 /.../DriverManager클래스에 등록되어 잇으므로
 			//				이 드라이버 인스튼스를 통하여 자바 파일과 오라클DB와 접속을 한다.
 			//				자바 파일과 오라클 DB와 접속을 의미하는 T4CConnection인스턴스를 리턴받아 conn변수에 저장함.
-			conn = DriverManager.getConnection(url, user, pwd);
+			connec = DriverManager.getConnection(url, user, pwd);
 			
 			// 4. Statement객체(SQL문을 오라클DB에 전달하여 실행할 객체) 생성하기
-			stmt = conn.createStatement();
+			stmt = connec.createStatement();
 					
 		} catch (Exception e) {
 			System.out.println("DB연결 실패 또는 Statement실행객체 얻기 실패 : " + e);
+			e.printStackTrace();
 		}
 		
 	}//connDB메소드 끝
 	
 	
 	//DB의 모든 회원정보를 조회하는 역할의 메소드
-	public ArrayList listMembers(){
+	public List listMembers(){
 		
-		ArrayList list = new ArrayList();
+		List list = new ArrayList();
 		
 		try {
 			connDB();	//4가지 정보(오라클드라이버, 오라클DB접속 주소정보, ID, PW)로 DB와 연결
 			
 			// 5. Query 작성하기
 			String query = "select * from t_member";
+			System.out.println(query);
 			
 			// 6. Query DBMS에 전송하여 실행
 			//		Select구문으로 회원정보를 검색한 후 검색한 결과 레코드들을 ResultSet객체에 담아 얻기
@@ -100,9 +107,16 @@ public class MemberDAO {
 				list.add(vo);
 			}
 			
+			//자원해제
+			rs.close();
+			stmt.close();
+			connec.close();
+			
 		} catch (Exception e) {
 			System.out.println("listMembers메소드 내부에서 오류 : " + e);
-		} finally {
+			e.printStackTrace();
+
+		} /* finally {
 			
 			try {
 				// 8. 자원해제
@@ -116,7 +130,7 @@ public class MemberDAO {
 				//????????????????????????????????????????????????????????????
 			}
 			
-		}
+		} */
 		
 		return list;	//DB로부터 검색한 회원정보들은 ArrayList배열에 저장되어 있기 때문에
 						//현재 listMembers메소드를 호출하는 서블릿으로 ArrayList배열 전체를 반환
