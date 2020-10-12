@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 // 순서1. 클라이언트가 웹브라우저 주소창에 http://localhost:8080/pro06/member주소로 
 // 			회원정보를 모두 DB로부터 검색해달라고 요청한다.
-@WebServlet("/member")
+//@WebServlet("/member")
 public class MemberServlet extends HttpServlet {
 
 	//순서2. doGet메소드가 호출될 때 요청시 새로운 HttpServletRequest객체 메모리를 인자로 전달 받는다.
