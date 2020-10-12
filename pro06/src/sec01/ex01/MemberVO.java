@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package sec01.ex01;
 
 import java.sql.Date;
@@ -148,4 +147,3 @@ public class MemberVO {
 	}
 	
 }
->>>>>>> refs/remotes/origin/master

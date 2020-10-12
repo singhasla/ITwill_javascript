@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 //@WebServlet("/member")
 public class MemberServlet extends HttpServlet {
 
+	
 	//순서2. doGet메소드가 호출될 때 요청시 새로운 HttpServletRequest객체 메모리를 인자로 전달 받는다.
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

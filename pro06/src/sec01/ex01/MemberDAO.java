@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package sec01.ex01;
 
 import java.sql.Connection;
@@ -269,4 +268,3 @@ public class MemberDAO {
 	
 }
 
->>>>>>> refs/remotes/origin/master
