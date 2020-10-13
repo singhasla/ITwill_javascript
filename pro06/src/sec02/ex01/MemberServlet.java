@@ -70,6 +70,7 @@ public class MemberServlet extends HttpServlet {
 		}
 		
 		out.print("</table></body></html>");
+		
 	}
 
 }
