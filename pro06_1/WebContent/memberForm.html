@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script>
+		//역할 : 아래에 회원가입양식에서 입려한 정보가 유효한지 체크 
+		function fn_sendMember(){
+			
+			//<form>요소를 선택해서 가져와서 frmMember변수에 저장
+			//<form>이 저장됨
+			var frmMember = document.frmMember;
+			//아래 입력 <input>태그중 입력한 아이디값을 얻어 id변수에 저장
+			var id = frmMember.id.value;
+			//아래 입력 <input>태그중 입력한 비밀번호값을 얻어  pwd변수에 저장
+			var pwd = frmMember.pwd.value;
+			//아래 입력<input>태그중 입력한 이름을 얻어 name변수에 저장
+			var name = frmMember.name.value;
+			//아래 입력<input>태그중 입력한 이메일을 얻어 email변수에 저장
+			var email = frmMember.email.value;
+		//조건문 if    else if     else사용
+			
+			//아이디를 입력하지 않았다면
+			if(id.length  == 0 || id == ""){
+				//경고창 : 아이디는 필수입니다.
+				window.alert("아이디는 필수입니다.");
+			}else if(pwd == "" || pwd.length == 0){//비밀번호를 입력하지 않았다면
+				//경고창 : 비밀번호는 필수 입니다.
+				alert("비밀번호는 필수 입니다.");
+			}else if(name.length == 0 || name == ""){//이름을 입력 하지 않았다면
+				//경고창 : 이름은 필수 입니다.
+				alert("이름은 필수 입니다.");
+			}else if(email.length == 0 || email == ""){//이메일을 입력 하지 않았다면
+				//경고창 : 이메일은 필수 입니다.
+				alert("이메일은 필수 입니다.");
+			}else {//위가입할 회원내용을 모두 입력 했다면 
+				//<form>태그의 전송방식을  post로 지정
+				frmMember.method = "post";
+				//서블릿으로 요청할 매핑 주소 이름을  member3로 지정
+				frmMember.action = "member3";
+				//<form>태그의 회원가입 전송 요청을 함.	
+				frmMember.submit();
+			}					
+		}
+	</script>
+
+</head>
+<body>
+	<!-- 가입할 회원정보를 입력하는 페이지 -->								
+	<form name="frmMember">			
+		<table>
+			<th>회원가입창</th>
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id"/></td><!-- 입력한 ID를 서블릿으로 전송함. -->
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="pwd"/></td><!-- 입력한 비밀번호를 서블릿으로 전송함 -->
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name"/></td><!-- 입력한 이름을 서블릿으로 전송함. -->
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="text" name="email"/></td> <!-- 입력한 이메일을 서블릿으로 전송함 -->
+			</tr>
+		</table>
+		
+		<input type="button" value="회원가입" onclick="fn_sendMember();" />
+		<input type="reset"  value="다시입력" />
+		
+		<!--  <input type="hidden"/>태그를 이용해 서블릿에게 새 회원 등록요청임을 알림    -->
+		<input type="hidden" name="command" value="addMember" />
+	</form>
+
+
+
+</body>
+
+
+
+</html>
+
