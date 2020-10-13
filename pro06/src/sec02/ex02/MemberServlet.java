@@ -65,6 +65,10 @@ public class MemberServlet extends HttpServlet {
 			//		MemberVO객체를 인자로 전달
 			dao.addMember(vo);
 			
+			
+			
+			
+			
 		}
 		
 	}
