@@ -187,6 +187,49 @@ public class MemberDAO {
 		}
 		
 	}
+
+	//삭제 링크 <a>태그를 클릭했을때.. 서블릿을 거쳐 전송해 온 회원 ID를 delMember메소드의 인자로 전달받아..
+	//DB에 저장되어 있는 회원 한 명의 정보를 삭제!
+	public void delMember(String id) {
+
+		try {
+			//1. DB연결
+			//		DataSource(커넥션풀)객체 내부의 Connection객체를 빌려와 DBMS와 연결을 맺음
+			conn = dataFactory.getConnection();		//DB연결
+			
+			//2. Query문(DELETE문장 만들기)
+			//		-> 매개변수로 전달받은 회원 id에 해당하는 회원레코드를 삭제
+			//		String query = "delete from t_member where id = " + id;
+			String query = "delete from t_member where id = ?";
+			
+			//3. Connection객체의 prepareStatement()메소드를 호출해서
+			//	DBMS에 delete문장 전체를 전달하여 실행시킬 PreparedStatement실행객체를 반환받는다.
+			//	단, 위 delete문장 전체를 prepareStatement()메소드 호출시 전달하여
+			//	? 기호에 대응되는 설정값을 제외함.
+			pstmt = conn.prepareStatement(query);
+			
+			//3-1. PreparedStatement실행객체에 ? 기호에 대응되는 값을 설정
+			pstmt.setString(1, id);
+			
+			//4. PreparedStatement실행객체의 executeUpdate메소드를 호출해
+			//	delete전체 문장을 DB에 전송하여 실행!
+			pstmt.executeUpdate();	//참고 -> insert, update, delete 문장 실행 가능!
+			
+			} catch (Exception e) {
+				System.out.println("delMember메소드 내부에서 오류 : " + e);
+		} finally {
+
+			try {
+				// 5. 자원해제
+				if(pstmt != null){pstmt.close();}			
+				
+				if(conn != null){conn.close();}	//DataSource커넥션풀에 Connection반납
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	
 }
 

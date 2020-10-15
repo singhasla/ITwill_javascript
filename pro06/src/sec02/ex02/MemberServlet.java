@@ -27,9 +27,20 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/member3")
 public class MemberServlet extends HttpServlet {
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doHandle(request, response);
+	}
+	
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doHandle(request, response);
+	}
+	
+	//순서2. doGet메소드가 호출될때 요청시 새로운 HttpServletRequest객체 메모리를 인자로 전달 받는다.
+	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// 클라이언트에게 응답할 데이터 종류 설정
 		response.setContentType("text/html;charset=utf-8");
@@ -71,8 +82,16 @@ public class MemberServlet extends HttpServlet {
 			dao.addMember(vo);
 
 			// 클라이언트가 요청한 값이 삭제 요청이면(delMember이면)
+			// 상세 : command변수에 저장되어 잇는 값이 delMember인 경우 삭제할 회원의 ID를 얻어
+			//			SQL문장을 만든다.
 		} else if (command.equals("delMember")) {
 
+			//삭제 링크를 클릭햇을 때 회원삭제를 위해 삭제할 회원아이디를 request메모리에서 꺼내오기
+			String id  = request.getParameter("id");
+			
+			//MemberDAO객체의 delMember메소드 호출시 삭제할 회원 id를 전달하여
+			//DELETE문장을 완성 후 DB에 저장되어 있는 회원정보를 삭제 시킨다.
+			dao.delMember(id);
 		}
 
 		// 각각의 MemberVO객체들을 최종적으로 ArrayList가변길이 배열에 저장후
